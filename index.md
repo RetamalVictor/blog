@@ -1,5 +1,7 @@
 ---
-title: "Welcome to my blog"
+title: "Victor Retamal Pages"
 ---
 
-I'm glad you are here. I plan to talk about ...
+Hello, Hello, I'm Victor. 
+
+This is my window to the world. You'll find my latest work, ideas and project here
