@@ -9,6 +9,6 @@ twitter_username: Victor_Retamal_ # DO NOT include the @ character, or else the 
 github_username:  RetamalVictor # DO NOT include the @ character, or else the build will fail!
 
 #theme
-remote_theme: affiliates
+remote_theme: wowthemesnet/affiliates-jekyll-theme
 
 show_excerpts: true # set to false to remove excerpts on the homepage
