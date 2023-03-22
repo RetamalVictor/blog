@@ -2,6 +2,6 @@
 sort: 1
 ---
 
-# Cool Projects
+# Relative Localization
 
 {% include list.liquid all=true %}

@@ -2,11 +2,13 @@
 
 ## **Welcome to my Blog!**
 
-I'm an MSc AI Student and Research Assistant @ VU Amsterdam. 
-Here you'll find some of my work. Currently, I am working with Multiagent system in real and simulated environments. For the real part, I'm using Crazyflies Nano drones to carry on research projects. Mainly Collective behaviours, Reinforcement Learning, Deep Learning and Robotics.
+Welcome to my blog! I'm an MSc AI Student and Research Assistant @ VU Amsterdam, and I'm excited to share some of my work with you. My research interest primarily focuses on multi-agent systems in both real and simulated environments, using Swarm of drones to conduct experiments in collective behaviors, reinforcement learning, deep learning, and robotics.
 
+I started this blog to share my projects findings and insights, as well as to discuss other interesting topics in the field. I hope to provide a platform where I can showcase my projects and share the lessons I've learned along the way.
 
-This a list of the coolest and most relevant projects I have around here:
+In my first blog post series, I delve into the topic of relative localization with Ultra Wideband TWR and Kalman filter implementation on board a swarm of Crazyflie 2.1 Nano drones. Check out the [first post](test\uwb.md) to learn more about relative localization, and stay tuned for more exciting updates in the future!
+
+This a list of the coolest and most relevant projects I have around in GitHub:
 
 ### **Currently working**
 
@@ -29,7 +31,6 @@ This a list of the coolest and most relevant projects I have around here:
 - [GPX to Map parser](https://github.com/RetamalVictor/GPX_ParserApp)
 - [Starcraft 2 Bots](https://github.com/RetamalVictor/starcraft-bot-amsterdam)
 - [N-Queens with Evolutionary Algorithm](https://github.com/RetamalVictor/NQueens_problem_EA)
-
 
 <p>
   <img height="180em" src="https://github-readme-stats-alpha-mauve.vercel.app/api/top-langs/?username=RetamalVictor&show_icons=true&hide_border=true&layout=compact&langs_count=8&theme=transparent"/>
