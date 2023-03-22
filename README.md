@@ -6,7 +6,7 @@ Welcome to my blog! I'm an MSc AI Student and Research Assistant @ VU Amsterdam,
 
 I started this blog to share my projects findings and insights, as well as to discuss other interesting topics in the field. I hope to provide a platform where I can showcase my projects and share the lessons I've learned along the way.
 
-In my first blog post series, I delve into the topic of relative localization with Ultra Wideband TWR and Kalman filter implementation on board a swarm of Crazyflie 2.1 Nano drones. Check out the [first post](test\uwb.md) to learn more about relative localization, and stay tuned for more exciting updates in the future!
+In my first blog post series, I delve into the topic of relative localization with Ultra Wideband TWR and Kalman filter implementation on board a swarm of Crazyflie 2.1 Nano drones. Check out the [first post](https://retamalvictor.github.io/blog/test/uwb.html) to learn more about relative localization, and stay tuned for more exciting updates in the future!
 
 This a list of the coolest and most relevant projects I have around in GitHub:
 
