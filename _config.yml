@@ -1,18 +1,31 @@
-title: My blog name
-author: Victor Retamaln 
-email: victorrtml22@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  I write about artificial intelligence, books, maths and science in general. Opinions mny own.
+title: jekyll-rtd-theme
+description: Just another documentation theme compatible with GitHub Pages
 
-# social links
-twitter_username: Victor_Retamal_ # DO NOT include the @ character, or else the build will fail!
-github_username:  RetamalVictor # DO NOT include the @ character, or else the build will fail!
+theme: null
 
-#theme
-remote_theme: rundocs/jekyll-rtd-theme
+# debug:
+#   compress: true
+#   dist: false
+#   shortcodes: true
+
+readme_index:
+  with_frontmatter: true
+
 plugins:
-  - jekyll-seo-tag
-  - jekyll-sitemap
-# theme: jekyll-rtd-theme
-#theme: minimal
-show_excerpts: true # set to false to remove excerpts on the homepage
+  - jemoji
+  - jekyll-avatar
+  - jekyll-mentions
+
+exclude:
+  - Makefile
+  - CNAME
+  - LICENSE
+  - update.sh
+  - Gemfile
+  - Gemfile.lock
+  - requirements.txt
+  - node_modules
+  - package.json
+  - package-lock.json
+  - webpack.config.js
+  - jekyll-rtd-theme.gemspec
