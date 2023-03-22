@@ -35,8 +35,8 @@ This a list of the coolest and most relevant projects I have around here:
   <img height="180em" src="https://github-readme-stats-alpha-mauve.vercel.app/api/top-langs/?username=RetamalVictor&show_icons=true&hide_border=true&layout=compact&langs_count=8&theme=transparent"/>
 </p>
 
+Find me on:
+
 [<img src="assets\icons\twit.png" alt="Twitter" width="20" height="20"/>](https://twitter.com/Victor_Retamal_)
 [<img src="assets\icons\link.png" alt="LinkedIn" width="20" height="20"/>](https://www.linkedin.com/in/victor-retamal/)
 [<img src="assets\icons\GitHub_logo.png" alt="GitHub" width="20" height="20"/>](https://github.com/RetamalVictor)
-
-{% include list.liquid all=true %}
