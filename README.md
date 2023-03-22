@@ -1,4 +1,4 @@
-# RetamalVictor
+# Victor Retamal
 
 ### Welcome to my Blog!
 [<img src="assets\icons\twit.png" alt="Twitter" width="20" height="20"/>](https://twitter.com/Victor_Retamal_)
