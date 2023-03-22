@@ -2,6 +2,8 @@
 
 ### Welcome to my Blog!
 [<img src="assets\icons\twit.png" alt="Twitter" width="20" height="20"/>](https://twitter.com/Victor_Retamal_)
+[<img src="assets\icons\link.png" alt="LinkedIn" width="20" height="20"/>](https://www.linkedin.com/in/victor-retamal/)
+[<img src="assets\icons\GitHub_logo.png" alt="GitHub" width="20" height="20"/>](https://github.com/RetamalVictor)
 
 I'm an MSc AI Student and Research Assistant @ VU Amsterdam. 
 Here you'll find some of my work. Currently, I am working with Multiagent system in real and simulated environments. For the real part, I'm using Crazyflies Nano drones to carry on research projects. Mainly Collective behaviours, Reinforcement Learning, Deep Learning and Robotics.
