@@ -31,4 +31,5 @@ _sass/@primer/css/**/*.md
 action.changelog.md
 
 # Examples
+test/
 test_long/
