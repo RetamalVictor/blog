@@ -2,7 +2,7 @@
 
 Have you ever seen a drone flying? Can you imagine the potential applications these flying machines have?
 
-Now imagine you have a swarm of them. This opens the door to a whole new world of possibilities. Then, why is nobody actively using them? Well, the answer is simple: they are hard to control. Today we will focus on one specific task fundamental to controlling the swarm: Localization. More specifically, we will focus on relative localization.
+Now imagine you have a swarm of them. This opens the door to a whole new world of possibilities. Then, why is not everyone is actively using them? Well, the answer is simple: they are hard to control. Today we will focus on one specific task fundamental to controlling the swarm: Localization. More specifically, we will focus on relative localization.
 
 Relative localization is a fundamental problem in multi-agent systems that involves determining the position and orientation of one Robot relative to another. In particular, the relative localization problem between Robots $$i$$ and $$j$$ refers to the challenge of estimating the relative pose (position and orientation) of Robot $$j$$ with in the frame of reference of Robot $$i$$, based on noisy measurements obtained from sensors on both Robots.
 
