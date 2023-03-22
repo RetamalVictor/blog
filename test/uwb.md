@@ -37,6 +37,7 @@ Robot $j$ receives the message and records the Time of Reception of Final (TRF).
 </div>
 
 Then ToF is calculated using the following equation:
+
 $$
  ToF = \frac{T_{\mathbf{Round_1}} \times T_{\mathbf{Round_2}} - T_{\mathbf{Reply_1}} \times T_{\mathbf{Reply_2}}}{T_{\mathbf{Round_1}} + T_{\mathbf{Round_2}} + T_{\mathbf{Reply_1}} + T_{\mathbf{Reply_2}}}
 $$
