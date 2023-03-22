@@ -4,7 +4,7 @@ Have you ever seen a drone flying? Can you imagine the potential applications th
 
 Now imagine you have a swarm of them. This opens the door to a whole new world of possibilities. Then, why is nobody actively using them? Well, the answer is simple: they are hard to control. Today we will focus on one specific task fundamental to controlling the swarm: Localization. More specifically, we will focus on relative localization.
 
-Relative localization is a fundamental problem in multi-agent systems that involves determining the position and orientation of one Robot relative to another. In particular, the relative localization problem between Robots $i$ and $j$ refers to the challenge of estimating the relative pose (position and orientation) of Robot $j$ with in the frame of reference of Robot $i$, based on noisy measurements obtained from sensors on both Robots.
+Relative localization is a fundamental problem in multi-agent systems that involves determining the position and orientation of one Robot relative to another. In particular, the relative localization problem between Robots $$i$$ and $$j$$ refers to the challenge of estimating the relative pose (position and orientation) of Robot $$j$$ with in the frame of reference of Robot $$i$$, based on noisy measurements obtained from sensors on both Robots.
 
 We have set the grounds for the problem; now, let's see how to solve it. Let me first introduce you to our platform. We will be using the Crazyflie 2.1 [[1]](#1), a small quadcopter that can be equipped with a UWB module. Crazyflie 2.1 is an open-source platform allowing easy customization and experimentation, making it an ideal platform for testing new algorithms.
 
@@ -24,12 +24,12 @@ Disclaimer: I will use images taken from the references I'll mention in this pos
 
 The UWB uses the Two Way Ranging Protocol (TWR) to measure the distance between the Robots. The TWR protocol requires four message exchanges between the two devices to calculate the distance. I will describe some subtle changes to the original protocol to make it more suitable for our application. These changes are published by the authors of the paper [[2]](#2).
 
-First, the initiator (Robot $i$) sends a ```POLL``` message to the responder (Robot $j$). This is called the Time of Sending Poll (TSP)
+First, the initiator (Robot $$i$$) sends a ```POLL``` message to the responder (Robot $$j$$). This is called the Time of Sending Poll (TSP)
 
-Robot $j$ receives the message and records the Time of Reception of the Poll (TRP). Then replies with a ```ANSWER``` message. This is called the Time of Sending Response (TSR).
+Robot $$j$$ receives the message and records the Time of Reception of the Poll (TRP). Then replies with a ```ANSWER``` message. This is called the Time of Sending Response (TSR).
 
-Robot $i$ receives the message and records the Time of Reception of Response (TRR). With this, Robot $i$ composes a message ```FINAL``` in which TSP, TRR, and Time Sending Final (TSF) are included.
-Robot $j$ receives the message and records the Time of Reception of Final (TRF). With all the information, Robot $j$ can calculate the distance between Robot $i$ and $j$. But we also want Robot $i$ to know the distance. For this, Robot $j$ composes a message to send back as ```REPORT``` including TSP, TRP, TSF, and TRF. This message can contain more information as ID or measurements from its sensors. This will come in handy later.
+Robot $$i$$ receives the message and records the Time of Reception of Response (TRR). With this, Robot $$i$$ composes a message ```FINAL``` in which TSP, TRR, and Time Sending Final (TSF) are included.
+Robot $$j$$ receives the message and records the Time of Reception of Final (TRF). With all the information, Robot $$j$$ can calculate the distance between Robot $$i$$ and $$j$$. But we also want Robot $$i$$ to know the distance. For this, Robot $$j$$ composes a message to send back as ```REPORT``` including TSP, TRP, TSF, and TRF. This message can contain more information as ID or measurements from its sensors. This will come in handy later.
 
 <div style="text-align:center;">
     <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Sds-twr.png" width="400"/>
@@ -42,7 +42,7 @@ $$
  ToF = \frac{T_{\mathbf{Round_1}} \times T_{\mathbf{Round_2}} - T_{\mathbf{Reply_1}} \times T_{\mathbf{Reply_2}}}{T_{\mathbf{Round_1}} + T_{\mathbf{Round_2}} + T_{\mathbf{Reply_1}} + T_{\mathbf{Reply_2}}}
 $$
 
-and the distance between Robots $i$ and $j$ is calculated using the following equation:
+and the distance between Robots $$i$$ and $$j$$ is calculated using the following equation:
 
 $$
 \mathbf{Distance_{ij}} = \frac{ToF \times \mathbf{LightSpeed}}{2}
@@ -55,9 +55,9 @@ Great, now that the Robots can calculate the distance between them, the question
     <p><em>Dynamic message and Synchronisation diagram</em></p>
 </div>
 
-Extra advantage, we can share sensor information from Robot $i$ to Robot $j$ and the distance calculated in Robot $i$ to reduce the error in the calculation, or we can calculate once in Robot $i$ and send it back to Robot $j$.
+Extra advantage, we can share sensor information from Robot $$i$$ to Robot $$j$$ and the distance calculated in Robot $$i$$ to reduce the error in the calculation, or we can calculate once in Robot $$i$$ and send it back to Robot $$j$$.
 
-We need to initialize the Protocol in all the Crazyflies (Cfs). We can decide to start with the ID $0$
+We need to initialize the Protocol in all the Crazyflies (Cfs). We can decide to start with the ID 0
 >### Initialization:
 >
 >Set ``current_Sender_ID`` = 0
