@@ -5,8 +5,6 @@
 I'm a Research Assistant @ VU Amsterdam.  
 Here you'll find some of my work. Currently, I am working with Multiagent system in real and simulated environments. For the real part, I'm using Crazyflies Nano drones to carry on research projects. Mainly Collective behaviours, Reinforcement Learning, Deep Learning and Robotics.
 
-Check my [Projects blog](https://retamalvictor.github.io/blog/) 
-
 This a list of the coolest and most relevant projects I have around here:
 
 **Currently working**
