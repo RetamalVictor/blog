@@ -36,6 +36,8 @@ This a list of the coolest and most relevant projects I have around in GitHub:
   <img height="180em" src="https://github-readme-stats-alpha-mauve.vercel.app/api/top-langs/?username=RetamalVictor&show_icons=true&hide_border=true&layout=compact&langs_count=8&theme=transparent"/>
 </p>
 
+My Resume is available [here]("(https://retamalvictor.github.io/blog/resume/resume.html")!
+
 Find me on:
 
 [<img src="assets\icons\twit.png" alt="Twitter" width="20" height="20"/>](https://twitter.com/Victor_Retamal_)
