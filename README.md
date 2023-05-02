@@ -2,21 +2,21 @@
 
 ## **Welcome to my Blog!**
 
-Welcome to my blog! I'm an MSc AI Student and Research Assistant @ VU Amsterdam, and I'm excited to share some of my work with you. My research interest primarily focuses on multi-agent systems in both real and simulated environments, using Swarm of drones to conduct experiments in collective behaviors, reinforcement learning, deep learning, and robotics.
+I'm a Research Assistant @ VU Amsterdam.  
+Here you'll find some of my work. Currently, I am working with Multiagent system in real and simulated environments. For the real part, I'm using Crazyflies Nano drones to carry on research projects. Mainly Collective behaviours, Reinforcement Learning, Deep Learning and Robotics.
 
-I started this blog to share my projects findings and insights, as well as to discuss other interesting topics in the field. I hope to provide a platform where I can showcase my projects and share the lessons I've learned along the way.
+Check my [Projects blog](https://retamalvictor.github.io/blog/) 
 
-In my first blog post series, I delve into the topic of relative localization with Ultra Wideband TWR and Kalman filter implementation on board a swarm of Crazyflie 2.1 Nano drones. Check out the [first post](https://retamalvictor.github.io/blog/test/uwb.html) to learn more about relative localization, and stay tuned for more exciting updates in the future!
+This a list of the coolest and most relevant projects I have around here:
 
-This a list of the coolest and most relevant projects I have around in GitHub:
-
-### **Currently working**
+**Currently working**
 
 - Learned collectived behaviours with Distance-only information (Again, public code soon)
 - Ultrasound Image Segmentation for Medical Images with Visual Transformers (Code available soon!)
+- [Path planning for Fixed Wing UAV](https://github.com/RetamalVictor/rrt_path_plannig)
 - [Robotic Car with Vision Guidance](https://github.com/RetamalVictor/robot-car)
 
-### **Finished**
+**Finished**
 
 - **(Submited to IROS2023)**[From Shadows to Light: A Swarm Robotics Approach with Onboard Control for Source Seeking in Constrained Environments](https://github.com/tugayalperen/IROS23gradfollower)
 - **(Acepted for ICRA2023)** [Onboard Controller Design for Nano UAV Swarm in Operator-Guided Collective Behaviours](https://github.com/RetamalVictor/crazyflie-firmware-VU)
@@ -35,8 +35,6 @@ This a list of the coolest and most relevant projects I have around in GitHub:
 <p>
   <img height="180em" src="https://github-readme-stats-alpha-mauve.vercel.app/api/top-langs/?username=RetamalVictor&show_icons=true&hide_border=true&layout=compact&langs_count=8&theme=transparent"/>
 </p>
-
-My Resume is available [here]("(https://retamalvictor.github.io/blog/resume/resume.html")!
 
 Find me on:
 
