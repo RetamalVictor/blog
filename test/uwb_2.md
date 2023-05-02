@@ -1,4 +1,4 @@
-# How to Use Time of Flight Ranging with UWB Devices
+# Part2. UWB ranging using Bi-TWR protocol implementation with C
 
 In this blog post, we will explore a code snippet that implements Time of Flight (ToF) ranging using Ultra-Wideband (UWB) devices. The code presented here is in C and makes use of the DW1000 library for communication with UWB devices.
 
