@@ -51,7 +51,7 @@ $$
 Great, now that the Robots can calculate the distance between them, the question arises: how do they distinguish between the initiator and the responder? TWR is thought to be used with stationary anchors, so the initiator is always the same. In our case, we want the Robots to be able to calculate the distance between them, so we need to make some changes to the protocol. We can add a synchronization method with an extra ```DYNAMIC``` message.  
 
 <div style="text-align:center;justify-content:center; align-items:center;">
-    <img src="blog/assets/images/uwb/TWR.PNG" width="500" style="margin-right:20px;"/>
+    <img src="../../assets/images/uwb/TWR.PNG" width="500" style="margin-right:20px;"/>
     <p><em>Dynamic message and Synchronisation diagram</em></p>
 </div>
 
