@@ -1,8 +1,8 @@
 ---
-title: "UWB Relative Localization"
+title: "Posts"
 sort: 1
 ---
 
-# Topic 1
+# Posts
 
 {% include list.liquid all=true %}
