@@ -1,3 +1,8 @@
+---
+title: "Home"
+permalink: "/"
+---
+
 ## **Victor Retamal**
 
 ### **Recent Publications & Contributions**
