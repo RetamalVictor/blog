@@ -50,9 +50,9 @@ Below is a list of my favorite projects. Visit my [GitHub profile](https://githu
 
 Find me on:
 
-[<img src="../assets/icons/twit.png" alt="Twitter" width="20" height="20"/>](https://twitter.com/Victor_Retamal_)
-[<img src="../assets/cons/link.png" alt="LinkedIn" width="20" height="20"/>](https://www.linkedin.com/in/victor-retamal/)
-[<img src="../assets/icons/GitHub_logo.png" alt="GitHub" width="20" height="20"/>](https://github.com/RetamalVictor)
+[<img src="/assets/icons/twit.png" alt="Twitter" width="20" height="20"/>](https://twitter.com/Victor_Retamal_)
+[<img src="../assets/icons/link.png" alt="LinkedIn" width="20" height="20"/>](https://www.linkedin.com/in/victor-retamal/)
+[<img src="../../assets/icons/GitHub_logo.png" alt="GitHub" width="20" height="20"/>](https://github.com/RetamalVictor)
 
 ---
 
