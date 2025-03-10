@@ -1,8 +1,8 @@
 ---
-title: "Second_post"
-sort: 2
+title: "UWB Ranging"
+sort: 1
 ---
 
-# Posts
+# UWB Ranging
 
 {% include list.liquid all=true %}
