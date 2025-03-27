@@ -8,7 +8,7 @@ I'm not officially enrolled in any university program at the moment, but I truly
 
 - **[Stanford CS149: Parallel Computing](https://cs149.stanford.edu/)**: Currently exploring how to harness multiple CPU cores to optimize performance and make computations lightning-fast.
 
-- **[CMU 16-745: Optimal Control and Reinforcement Learning](https://www.cs.cmu.edu/~16831-f23/)**: Digging into the latest in reinforcement learning, figuring out how intelligent systems make smart decisions in complex situations.
+- **[CMU 16-745: Optimal Control and Reinforcement Learning](https://optimalcontrol.ri.cmu.edu/)**: Digging into the latest in reinforcement learning, figuring out how intelligent systems make smart decisions in complex situations.
 
 I'll be sharing interesting projects, insights, and even challenges I run into. No strict posting schedule here—just whenever I stumble upon something interesting worth sharing!
 As an example,  Here's a quick snapshot from one assignment where I solved an optimization problem to find a stable point for balancing a quadruped robot on one leg:
