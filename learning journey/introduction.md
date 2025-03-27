@@ -1,3 +1,7 @@
+---
+title: "Intro: Diving Into Open-Source Courses"
+date: "27-03-2025"
+---
 # Intro: Diving Into Open-Source Courses
 
 Hey everyone! I'm starting a new series here on the blog called **My Learning Journey**. It's my way of sharing some cool stuff I'm learning, working on, and exploring through open-source courses available online. 
@@ -19,6 +23,9 @@ As an example,  Here's a quick snapshot from one assignment where I solved an op
   </figcaption>
 </figure>
 <br>
+
+With time, I'll probably add other courses and resources here, but for now, this will take a big chunk of my year to complete.
+
 Oh, and another fun thing: I'm also experimenting with using AI tools like large language models (LLMs) to help with writing and organizing my thoughts. It's pretty cool seeing how these tools can enhance creativity and productivity.
 
 Thanks for joining me on this journey—looking forward to sharing more soon!
