@@ -1,8 +1,8 @@
 ---
-title: "Invariance and Equivariance"
+title: "My Learning Journey"
 sort: 1
 ---
 
-# Invariance and Equivariance
+# My Learning Journey
 
 {% include list.liquid all=true %}

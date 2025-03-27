@@ -1,4 +1,4 @@
-# My Learning Journey: Diving Into Open-Source Courses
+# Intro: Diving Into Open-Source Courses
 
 Hey everyone! I'm starting a new series here on the blog called **My Learning Journey**. It's my way of sharing some cool stuff I'm learning, working on, and exploring through open-source courses available online. 
 
@@ -18,8 +18,7 @@ As an example,  Here's a quick snapshot from one assignment where I solved an op
     Balancing a quadruped robot using optimization techniques learned in CMU's Optimal Control course.
   </figcaption>
 </figure>
-
-
+<br>
 Oh, and another fun thing: I'm also experimenting with using AI tools like large language models (LLMs) to help with writing and organizing my thoughts. It's pretty cool seeing how these tools can enhance creativity and productivity.
 
 Thanks for joining me on this journey—looking forward to sharing more soon!
@@ -29,3 +28,4 @@ Cheers
 [![Twitter](https://img.shields.io/badge/-Twitter-blue)](https://twitter.com/Victor_Retamal_)
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-blue)](https://www.linkedin.com/in/victor-retamal/)
 [![GitHub](https://img.shields.io/badge/-GitHub-gray)](https://github.com/RetamalVictor)
+[![Goodreads](https://img.shields.io/badge/-Goodreads-brown)](https://www.goodreads.com/user/show/72885820-victor-retamal)

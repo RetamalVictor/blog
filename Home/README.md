@@ -1,13 +1,13 @@
-# Victor Retamal  
-
-**Robotics/ML Engineer**
-
+# Victor Retamal
 
 ## About Me  
-Currently working as a Robotics/ML Engineer for Multirobots Systems @ Technology Innovation Institute. Previously Research Assistant @ VU Amsterdam.
+Currently working as a **Robotics/ML Engineer** for Multi-Robot Systems at the Technology Innovation Institute. Previously, I was a Research Assistant at VU Amsterdam.
 
-## Interests
-**AI-driven Robotics, Aerospace Research, Deep Learning, Reinforcement Learning, Multi-Agent Systems, Swarm Robotics & Collective Intelligence**
+In this blog, you’ll find a mashup of random ideas, projects, and notes from courses I’m taking—kind of a personal logbook for my journey. I mainly write these posts to stay accountable and put real effort into turning my thoughts into tangible projects. Hopefully, you’ll find something here that sparks your interest or helps in some small way. If so, that’s awesome
+
+I'm professionally interested in things like **AI-driven Robotics, Aerospace Research, Deep Learning, Reinforcement Learning, Multi-Agent Systems, Swarm Robotics & Collective Intelligence**—basically, anything that tries to replicate intelligece.
+<br>
+On a personal level, though, my interests are much broader (and probably more scattered): Chess (and games of all kinds, really), art and photography, books, and mathematics—basically anything intriguing enough to pull me down a rabbit hole.
 
 ---
 
@@ -41,5 +41,7 @@ Currently working as a Robotics/ML Engineer for Multirobots Systems @ Technology
 [![Twitter](https://img.shields.io/badge/-Twitter-blue)](https://twitter.com/Victor_Retamal_)
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-blue)](https://www.linkedin.com/in/victor-retamal/)
 [![GitHub](https://img.shields.io/badge/-GitHub-gray)](https://github.com/RetamalVictor)
+[![Goodreads](https://img.shields.io/badge/-Goodreads-brown)](https://www.goodreads.com/user/show/72885820-victor-retamal)
+
 
 ![GitHub stats](https://github-readme-stats-alpha-mauve.vercel.app/api/top-langs/?username=RetamalVictor&show_icons=true&hide_border=true&layout=compact&langs_count=8&theme=transparent)
