@@ -1,13 +1,19 @@
+---
+title: "Home"
+sort: 1
+---
 # Victor Retamal
 
 ## About Me  
 Currently working as a **Robotics/ML Engineer** for Multi-Robot Systems at the Technology Innovation Institute. Previously, I was a Research Assistant at VU Amsterdam.
 
-In this blog, you’ll find a mashup of random ideas, projects, and notes from courses I’m taking—kind of a personal logbook for my journey. I mainly write these posts to stay accountable and put real effort into turning my thoughts into tangible projects. Hopefully, you’ll find something here that sparks your interest or helps in some small way. If so, that’s awesome
+In this blog, you’ll find a mashup of random ideas, projects, and notes from courses I’m taking—kind of a personal logbook for my journey. I mainly write these posts to stay accountable and put real effort into turning my thoughts into tangible projects. Hopefully, you’ll find something here that sparks your interest or helps in some small way. If so, that’s awesome.
 
-I'm professionally interested in things like **AI-driven Robotics, Aerospace Research, Deep Learning, Reinforcement Learning, Multi-Agent Systems, Swarm Robotics & Collective Intelligence**—basically, anything that tries to replicate intelligece.
+I'm professionally interested in things like **Deep Learning, Reinforcement Learning, Multi-Agent Systems, Swarm Robotics & Collective Intelligence, Aerospace Research and AI-driven Robotics**—basically, anything that explores how intelligence emerges and how we can replicate it.
 <br>
 On a personal level, though, my interests are much broader (and probably more scattered): Chess (and games of all kinds, really), art and photography, books, and mathematics—basically anything intriguing enough to pull me down a rabbit hole.
+
+If you're curious about how all this plays out in practice (the successes, the stumbles, and everything in between), feel free to drop by my **[learning logbook](https://retamalvictor.github.io/blog/learning%20journey/introduction.html)**—it's where I document the cool things I'm exploring, building, and sometimes breaking.
 
 ---
 
