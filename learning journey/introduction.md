@@ -14,6 +14,9 @@ I'm not officially enrolled in any university program at the moment, but I truly
 
 - **[CMU 16-745: Optimal Control and Reinforcement Learning](https://optimalcontrol.ri.cmu.edu/)**: Digging into the latest in reinforcement learning, figuring out how intelligent systems make smart decisions in complex situations.
 
+- **[Applied Space System Engineering](https://aiaa.mycrowdwisdom.com/diweb/catalog/item?id=17366964)**: Soon, I'll start this course as part of my work-related learning journey. Hopefully, I will discover how a system engineering is done in such a demanding industry as space industry. Disclaimer, this is not open source, but still a cool/practical course to take.
+
+
 I'll be sharing interesting projects, insights, and even challenges I run into. No strict posting schedule here—just whenever I stumble upon something interesting worth sharing!
 As an example,  Here's a quick snapshot from one assignment where I solved an optimization problem to find a stable point for balancing a quadruped robot on one leg:
 <figure style="text-align: center;">
