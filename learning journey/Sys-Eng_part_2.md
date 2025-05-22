@@ -1,6 +1,7 @@
 ---
 title: "Practice Project for Systems Engineering - Part 2"
 date: "22-05-2025"
+sort: 4
 ---
 
 # Practice Project for Systems Engineering - Part 2

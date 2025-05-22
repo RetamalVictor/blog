@@ -1,6 +1,7 @@
 ---
 title: "Practice Project for Systems Engineering - Part 1"
 date: "22-05-2025"
+sort: 3
 ---
 
 # Practice Project for Systems Engineering - Part 1
@@ -9,7 +10,8 @@ Imagine you’re at your local RC club race. Your RC buggy rockets down the stra
 No brakes, no hope. Or you’re threading hair-pins, but the video feed lags so badly you might as well be driving blindfolded.
 
 That nightmare is the frustration this project sets out to erase.
->*“I want my WLtoys buggy to brake by itself if the radio dies,and I want live video that isn’t a slideshow—all for pocket money.”* 
+>*“I want my WLtoys buggy to brake by itself if the radio dies,and I want live video that isn’t a slideshow—all for pocket money.”*
+
 This post captures the **front-end thinking**, mission framing, requirements, trade studies, and a first-cut architecture, *before a single line of firmware is written*. 
 
 > DISCLAIMER: I haven't done extensive testing for the hardware pieces included in the project. Since this is an exercise, I "trusted" GPT o3 with the estimates for the latencies and such. If I were planning to carry on with this project, a whole verification and validation process would need to be done for those parts.
@@ -46,10 +48,10 @@ We interrogate the concept with three questions: **who hurts, how do they hurt, 
 
 The table may look trivial, but it took three sticky-note sessions to collapse sprawling wish-lists into defined mission points with a  **single declarative sentence**.
 
->**Mission M.1 — Braking Safety**  
+1.  **Mission M.1 — Braking Safety**  
 *Bring the buggy from 30 km h⁻¹ to a full stop in ≤ 1.2 m, or within 100 ms of radio loss, without wheel lock-up.*  
 
->**Mission M.2 — Low-Latency Situational Awareness**  
+2. **Mission M.2 — Low-Latency Situational Awareness**  
 *Provide a forward-facing FPV stream with ≤ 120 ms glass-to-glass latency, using hobby-grade parts and keeping the extra electronics under $ 60.*  
 
 Those two missions become the filters for every requirement that follows.
@@ -200,11 +202,7 @@ Spend ten minutes sketching each rig now; save ten days of “why is it slow?”
 
 Everything above cements the *why* and the *what* of this project.
 But diagrams don’t stop runaway cars—firmware, task graphs, and PCB traces do.
-In **Part 2** we pivot from “paper promises” to “design you can compile”:
-
-* map each SMART requirement to an RTOS task,
-* split latency budgets across camera DMA, Wi-Fi sockets, and the analogue VTx,
-* and show how a \$10 ESP32 module keeps all that math under 50 % CPU.
+In **Part 2** we pivot from “paper promises” to “design you can compile”
 
 If Part 1 gave you the mental scaffolding, Part 2 will hand you the wrench set.
 **Grab a coffee and jump in → *Practice Project for Systems Engineering - Part 2***.
