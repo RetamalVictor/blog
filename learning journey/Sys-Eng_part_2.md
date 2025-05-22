@@ -1,5 +1,5 @@
 ---
-title: "Practice Project for Systems Engineering - Part 1"
+title: "Practice Project for Systems Engineering - Part 2"
 date: "22-05-2025"
 ---
 
