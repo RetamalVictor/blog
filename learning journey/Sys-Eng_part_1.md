@@ -18,13 +18,58 @@ This post captures the **front-end thinking**, mission framing, requirements, tr
 
 PS: I already got the platform :)
 
-<iframe
-  width="560" height="315"
-  src="https://youtu.be/OGjxqzypcB0"
-  frameborder="0"
-  allow="encrypted-media; picture-in-picture"
-  allowfullscreen>
-</iframe>
+<style>
+  .yt-lite {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;          /* center horizontally */
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+  }
+  .yt-lite::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;     /* 16:9 aspect ratio */
+  }
+  .yt-lite .play-button {
+    width: 0;
+    height: 0;
+    border-top: 24px solid transparent;
+    border-bottom: 24px solid transparent;
+    border-left: 36px solid rgba(255,255,255,0.8);
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+
+<div class="yt-lite" data-id="OGjxqzypcB0"
+     style="background-image:url(https://img.youtube.com/vi/OGjxqzypcB0/hqdefault.jpg);">
+  <div class="play-button"></div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('.yt-lite').forEach(div => {
+      div.addEventListener('click', () => {
+        const id = div.dataset.id;
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube-nocookie.com/embed/${id}`;
+        iframe.frameBorder = '0';
+        iframe.allow = 'accelerometer; clipboard-write; encrypted-media; picture-in-picture';
+        iframe.allowFullscreen = true;
+        iframe.width  = div.clientWidth;
+        iframe.height = div.clientHeight;
+        div.replaceWith(iframe);
+      });
+    });
+  });
+</script>
+
+
+
 
 ---
 
