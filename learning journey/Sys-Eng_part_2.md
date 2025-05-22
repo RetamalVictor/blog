@@ -24,7 +24,8 @@ Part 2 begins the climb up the right-hand side. Here the abstractions acquire vo
 By the end of this part you’ll have the full bill-of-materials, a layered codebase skeleton, and concrete verification hooks—all ready for the soldering iron. If Part 1 was the blueprint, Part 2 is the build manual. Let’s zoom in.
 
 
-DISCLAIMER: I haven't done extensive testing for the hardware pieces includes in the project. Since this is an exercise, I "trusted" gpt o3 with the estimates for the latencies and such. Were I plannig to carry on with this project. A whole verification and validation process would need to be done for those parts.
+DISCLAIMER: I haven't done extensive testing for the hardware pieces included in the project. Since this is an exercise, I "trusted" GPT o3 with the estimates for the latencies and such. If I were planning to carry on with this project, a whole verification and validation process would need to be done for those parts.
+
 
 ---
 
@@ -45,11 +46,12 @@ DISCLAIMER: I haven't done extensive testing for the hardware pieces includes in
 
 > In classical control parlance this is a *sense → estimate → decide → act* pipeline. The feedback loop closes every 10 ms, giving the controller five fresh opportunities to intervene during the 25 ms it takes the car to travel 20 cm at 30 km h⁻¹.
 
+
 | Block      | Prime SMART reqs |
 | ---------- | ---------------- |
 | Sensing    | FR-4             |
-| Estimation | FR-2             |
-| Control    | FR-1, FR-2       |
+| Estimation | FR-1a, FR-2             |
+| Control    | FR-1b, FR-2       |
 | Telemetry  | FR-3, FR-4       |
 
 Anything that cannot be traced forward to a requirement,or backward to a verification step,gets chopped as scope-creep.
@@ -57,7 +59,7 @@ Anything that cannot be traced forward to a requirement,or backward to a verific
 ---
 
 ## 2 Physical Architecture - *What the System Is*
-As with other part of the series, selecting certain parts as the MCE, ESC, Servos and so on, need to be carefully considered. Here, I'm "trusting" the LLM (GPT o3) to select for me, but if I were to build the system, I would refine this part in detail.
+As with other parts of the series, selecting certain parts, such as the MCU, ESC, Servos, etc., must be carefully considered. Here, I'm "trusting" the LLM (GPT o3) to select for me, but if I were to build the system, I would refine this part in detail.
 
 | Sub-assembly          | Main parts & interfaces                                                                     | Power domain |
 |-----------------------|---------------------------------------------------------------------------------------------|--------------|
@@ -141,8 +143,8 @@ As with other part of the series, selecting certain parts as the MCE, ESC, Servo
 | Task (core)          | Period | Stack | Prio | Role                                               |
 |----------------------|--------|-------|------|----------------------------------------------------|
 | `sensor_task` (1)    | 10 ms  | 4 kB  | 15   | IMU + Hall → `STATE_RAW`                           |
-| `estimator_task`     | 10 ms  | 6 kB  | 18   | Madgwick+Kalman → `VehicleState`                   |
-| `control_task`       | 10 ms  | 4 kB  | 20   | ABS PID → `BrakeCommand`                           |
+| `estimator_task`     | 10 ms  | 6 kB  | 18   |Madgwick + Kalman + link-loss timer → `VehicleState`                  |
+| `control_task`       | 10 ms  | 4 kB  | 20   | ABS PID (+ FailsafeManager) → `BrakeCommand`                           |
 | `mux_feed_task` (1)  | 2 ms   | 1 kB  | 22   | Toggle GPIO watchdog for 74HC157                   |
 | `actuator_task`      | 10 ms  | 3 kB  | 21   | ESC PWM, safety heartbeat check                    |
 | `cam_task` (0)       | 33 ms  | 8 kB  | 10   | DMA frame → PSRAM                                  |
@@ -281,7 +283,7 @@ Firmware constants:
 #define ESC_BRAKE_MAX_US 1300   // never go lower
 ```
 
-`SpeedCommander` linearly interpolates between those limits; the **pwm\_mux\_driver** toggles its GPIO at 2 kHz. If the MCU crashes, the RC filter on the mux select pin discharges in ≈ 25 ms and hardware flips back to the radio lane—meeting FR-1 even with dead firmware.
+`SpeedCommander` linearly interpolates between those limits; the **pwm\_mux\_driver** toggles its GPIO at 2 kHz. If the MCU crashes, the RC filter on the mux select pin discharges in ≈ 25 ms and hardware flips back to the radio lane—meeting FR-1b even with dead firmware.
 
 ---
 
@@ -298,7 +300,7 @@ Firmware constants:
 
 | Hook                             | What it proves                                        |
 | -------------------------------- | ----------------------------------------------------- |
-| **Logic-analyser** on mux output | Pulse drops to 1.30 ms ≤ 100 ms after Rx loss (FR-1). |
+| **Logic-analyser** on mux output | Pulse drops to 1.30 ms ≤ 100 ms after Rx loss (FR-1b).|
 | **High-speed video** + tape      | 30 km h⁻¹ → 0 in ≤ 1.2 m (FR-2).                      |
 | **Replay harness**               | Deterministic stop distance on log playback.          |
 
@@ -326,16 +328,16 @@ So you get laboratory-friendly Wi-Fi plus race-worthy analogue,each with its own
 
 ## 4  End-to-End Traceability - Kitchen-Table Proof
 
-| Req  | Functional blk | Physical element        | Software module           | Verification hook                |
-| ---- | -------------- | ----------------------- | ------------------------- | -------------------------------- |
-| FR-1 | Control        | **74HC157 mux + QuicRun ESC**            | `control_task`, `mux_feed_task`            | Logic-analyser script + watchdog scope           |
-| FR-2 | Control/Sense  | Hall + IMU              | `estimator_task`, `PID`   | High-speed video + pandas script |
-| FR-3 | Telemetry      | OV2640 + Wi-Fi streamer | `cam_task`, `stream_task` | LED latency rig                  |
-| FR-4 | Telemetry      | SD card                 | `csv_logger`              | pandas integrity check           |
-| FR-5 | Telemetry      | **WildFire VTx**        | `fpv_monitor`, `osd_task` | IR scope rig (latency)           |
-| CO-1 | BOM            | All parts               | `tools/bom.xlsx`          | CI budget line                   |
+| Req       | Functional blk  | Physical element(s)                   | Software module(s)                 | Verification hook                                   |
+| --------- | --------------- | ------------------------------------- | ---------------------------------- | --------------------------------------------------- |
+| **FR-1a** | **Estimation**  | ELRS Rx PWM line <br> + timer counter | `estimator_task` (`LinkLossTimer`) | Logic-analyser: > 120 ms gap raises `EVENT_RX_LOST` |
+| **FR-1b** | **Control**     | 74HC157 mux (sel GPIO) + QuicRun ESC  | `control_task`, `mux_feed_task`    | Scope: pulse hits 1.30 ms ≤ 100 ms after FR-1a      |
+| **FR-2**  | Control / Sense | Hall sensor + BMI270 IMU              | `estimator_task`, `PID`            | Hi-speed video + pandas stop-distance script        |
+| **FR-3**  | Telemetry       | OV2640 cam + ESP32 Wi-Fi              | `cam_task`, `stream_task`          | LED-flash latency rig                               |
+| **FR-4**  | Telemetry       | SD-card logger                        | `csv_logger`                       | pandas integrity check                              |
+| **FR-5**  | Telemetry       | WildFire Nano VTx                     | `fpv_monitor`, `osd_task`          | IR-scope: analogue latency                          |
+| **CO-1**  | BOM             | All parts                             | `tools/bom.xlsx`                   | CI budget line                                      |
 
----
 
 ## 5  Risks & Mitigations Snapshot
 

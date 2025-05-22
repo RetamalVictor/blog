@@ -5,15 +5,15 @@ date: "22-05-2025"
 
 # Practice Project for Systems Engineering - Part 1
 
-> **Mission (draft)** – *Enable a 1/14-scale WLtoys 144001 to stop safely and stream FPV with < 120 ms latency, using hobby-grade parts and a sub-\$60 electronics stack.*
-
-Imagine you’re at your local RC-club race. Your RC buggy rockets down the straight and **snap**, the radio link dies.  
+Imagine you’re at your local RC club race. Your RC buggy rockets down the straight and **snap**, the radio link dies.  
 No brakes, no hope. Or you’re threading hair-pins, but the video feed lags so badly you might as well be driving blindfolded.
 
-That nightmare is the frustration this projects sets out to erase.  
+That nightmare is the frustration this project sets out to erase.
+>*“I want my WLtoys buggy to brake by itself if the radio dies,and I want live video that isn’t a slideshow—all for pocket money.”* 
 This post captures the **front-end thinking**, mission framing, requirements, trade studies, and a first-cut architecture, *before a single line of firmware is written*. 
 
-DISCLAIMER: I haven't done extensive testing for the hardware pieces includes in the project. Since this is an exercise, I "trusted" gpt o3 with the estimates for the latencies and such. Were I plannig to carry on with this project. A whole verification and validation process would need to be done for those parts.
+> DISCLAIMER: I haven't done extensive testing for the hardware pieces included in the project. Since this is an exercise, I "trusted" GPT o3 with the estimates for the latencies and such. If I were planning to carry on with this project, a whole verification and validation process would need to be done for those parts.
+
 
 ---
 
@@ -21,7 +21,7 @@ DISCLAIMER: I haven't done extensive testing for the hardware pieces includes in
 
 > **Why this section exists** We open with a crystal-clear finish line. Numbers first; the figures anchor every future argument.
 
-**TARGET PERFORMANCE - *Not Yet Achieved***  
+**TARGET PERFORMANCE** 
 
 * Braking 30 km h⁻¹ → 0 in ≤ 1.2 m  
 * 30 fps FPV with ≤ 120 ms glass-to-glass latency  
@@ -33,7 +33,7 @@ Whenever we debate a design choice, we drag it back to this bullet list and ask:
 
 ---
 
-## 2  From Idea to One-Sentence Mission  
+## 2  From Idea to Mission Definition
 
 Before solder smoke and Git commits, systems engineering forces us to tame the foggy idea.  
 We interrogate the concept with three questions: **who hurts, how do they hurt, what single outcome removes the pain?**
@@ -44,8 +44,15 @@ We interrogate the concept with three questions: **who hurts, how do they hurt, 
 | **Need extraction**      | What hurts?  | Long braking, risk of runaway, laggy or dropped FPV.       |
 | **Mission wording**      | Outcome?     | “Stop safely and stream low-latency video with hobby parts.”|
 
-The table may look trivial, but it took three sticky-note sessions to collapse sprawling wish-lists into a **single declarative sentence**.  
-That sentence now acts as a gatekeeper: any feature that cannot prove it helps *stop* or *stream* is postponed or killed.
+The table may look trivial, but it took three sticky-note sessions to collapse sprawling wish-lists into defined mission points with a  **single declarative sentence**.
+
+>**Mission M.1 — Braking Safety**  
+*Bring the buggy from 30 km h⁻¹ to a full stop in ≤ 1.2 m, or within 100 ms of radio loss, without wheel lock-up.*  
+
+>**Mission M.2 — Low-Latency Situational Awareness**  
+*Provide a forward-facing FPV stream with ≤ 120 ms glass-to-glass latency, using hobby-grade parts and keeping the extra electronics under $ 60.*  
+
+Those two missions become the filters for every requirement that follows.
 
 ---
 
@@ -63,8 +70,8 @@ Stakeholder Needs  →  System Req  →  High-Level Design  →  Detailed Design
 
 ```
 
-*Left side*: we slide **downwards**, refining fuzzy pains (long braking, laggy FPV) into the SMART “shall” statements you’ll meet in Section 3, then into the architecture snapshot of Section 5.  
-*Right side*: we climb **upwards**, using the Verification Matrix (Section 7) to prove—unit by unit, then subsystem by subsystem—that the real buggy matches those early promises. 
+*Left side* → we slide **downwards**, refining fuzzy pains (long braking, laggy FPV) into the SMART “shall” statements you’ll meet in Section 3, then into the architecture snapshot of Section 5.  
+*Right side* → we climb **upwards**, using the Verification Matrix (Section 7) to prove—unit by unit, then subsystem by subsystem—that the real buggy matches those early promises. 
 
 | V-Step                   | This-post Artefact                         |
 |--------------------------|-------------------------------------------|
@@ -86,8 +93,9 @@ That symmetry is the mental model you’ll spot in every later decision.
 > **How this table was born** We ran a ruthless word-workout: every “should” became a “shall”, every vague adjective gained a number, every number gained a **kitchen-table test**.
 
 | ID   | “Shall” Statement (measurable)                                            | Planned Verification            |
-|------|---------------------------------------------------------------------------|---------------------------------|
-| **FR-1** | Detect Rx PWM loss > 120 ms **and** drive ESC to full brake ≤ 100 ms. | Logic-analyser script.          |
+|---------|---------------------------------------------------------------------------|---------------------------------|
+| **FR-1a** | Detect Rx PWM loss > 120 ms | Logic-analyser script.          |
+| **FR-1b** | Drive the ESC to a ≥ 100 % brake pulse within ≤ 100 ms of FR-1a firing. | Logic-analyser + scope.          |
 | **FR-2** | Rear-wheel ABS reduces 30 km h⁻¹ stop distance to **≤ 1.2 m**.        | Tape-measure & high-speed cam.  |
 | **FR-3** | Analogue FPV latency **≤ 20 ms** (95 %-ile).                          | IR-LED scope rig.               |
 | **FR-4** | MJPEG Wi-Fi stream ≥ 30 fps, latency **≤ 120 ms**.                    | LED-flash latency rig.          |
@@ -132,7 +140,7 @@ Notice how latency and cost killed several shinier options.
 
 Reading the diagram:
   1. User Tx → 2.4 GHz Rx The hand-held transmitter delivers throttle/brake PWM. The 74HC157 mux defaults to this lane if the ESP32 watchdog stops toggling.
-  If that link goes silent for more than 120 ms, FR-1’s failsafe slams the brakes.
+  If that link goes silent for more than 120 ms, FR-1a’s failsafe slams the brakes.
   2. Sensing ingests both vehicle data (wheel Hall count, IMU) and the human command from the Rx, time-stamping everything at 100 Hz.
   3. Estimation fuses sensor cues, computes slip, and forwards a clean state vector to Control.
   4. Control blends the user’s throttle intent with ABS logic and watchdogs; the output is a shaped PWM duty that Actuation feeds to the ESC via the mux’s second lane.
@@ -176,7 +184,8 @@ Take-away: the system tolerates Wi-Fi jitter because the *race-critical* feed is
 
 | Req  | Tool             | Pass Criterion     |
 |------|------------------|--------------------|
-| FR-1 | Logic-analyser   | ≤ 100 ms           |
+| FR-1a | Logic-analyser   | ≤ 120 ms gap          |
+| FR-1b | Logic-analyser   | ≤ 100 ms to 1.30 ms pulse           |
 | FR-2 | High-speed video | ≤ 1.2 m            |
 | FR-3 | IR scope rig     | ≤ 20 ms (95 %)     |
 | FR-4 | LED latency rig  | ≤ 120 ms           |
@@ -189,7 +198,7 @@ Spend ten minutes sketching each rig now; save ten days of “why is it slow?”
 
 ### Ready for the Right-Hand Side?
 
-Everything above cements the *why* and the *what* of SmartDrive-XR.
+Everything above cements the *why* and the *what* of this project.
 But diagrams don’t stop runaway cars—firmware, task graphs, and PCB traces do.
 In **Part 2** we pivot from “paper promises” to “design you can compile”:
 
