@@ -25,7 +25,7 @@ Part 2 begins the climb up the right-hand side. Here the abstractions acquire vo
 By the end of this part you’ll have the full bill-of-materials, a layered codebase skeleton, and concrete verification hooks—all ready for the soldering iron. If Part 1 was the blueprint, Part 2 is the build manual. Let’s zoom in.
 
 
-DISCLAIMER: I haven't done extensive testing for the hardware pieces included in the project. Since this is an exercise, I "trusted" GPT o3 with the estimates for the latencies and such. If I were planning to carry on with this project, a whole verification and validation process would need to be done for those parts.
+>DISCLAIMER: I haven't done extensive testing for the hardware pieces included in the project. Since this is an exercise, I "trusted" GPT o3 with the estimates for the latencies and such. If I were planning to carry on with this project, a whole verification and validation process would need to be done for those parts.
 
 
 ---
@@ -241,7 +241,7 @@ Compile-time pins via **menuconfig**; run-time tweaks via CLI (`set fpv.mode wif
        alt="System signal-flow: user Tx to Rx, sensing, estimation, control, actuation, and twin telemetry paths"
        style="max-width:100%;height:auto;display:block;margin:0 auto;">
   <figcaption style="font-style:italic;">
-Architecture and dtaa flow of ABS system
+Architecture and data flow of ABS system
   </figcaption>
 </figure>
 <br>

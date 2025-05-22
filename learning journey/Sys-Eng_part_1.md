@@ -16,6 +16,15 @@ This post captures the **front-end thinking**, mission framing, requirements, tr
 
 > DISCLAIMER: I haven't done extensive testing for the hardware pieces included in the project. Since this is an exercise, I "trusted" GPT o3 with the estimates for the latencies and such. If I were planning to carry on with this project, a whole verification and validation process would need to be done for those parts.
 
+PS: I already got the platform :)
+
+<iframe
+  width="560" height="315"
+  src="https://youtu.be/OGjxqzypcB0"
+  frameborder="0"
+  allow="encrypted-media; picture-in-picture"
+  allowfullscreen>
+</iframe>
 
 ---
 
