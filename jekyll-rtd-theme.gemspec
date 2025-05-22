@@ -2,7 +2,7 @@ Gem::Specification.new do |spec|
   spec.name          = "VictorRetamal"
   spec.version       = "2.0.10"
   spec.authors       = ["Victor"]
-  spec.email         = ["v.retamalguiberteau@student.vu.nl"]
+  spec.email         = ["retamal1.victor@gmail.com"]
 
   spec.summary       = "Take a look at my journey"
   spec.license       = "MIT"
