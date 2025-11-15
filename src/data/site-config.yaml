@@ -1,0 +1,71 @@
+# Site Configuration
+# Central configuration for all personal information and site settings
+
+site:
+  title: "Victor Retamal - ML Research Engineer"
+  description: "Machine Learning Research Engineer specializing in computer vision, reinforcement learning, and multi-agent systems for robotics applications"
+  url: "https://victor-retamal.com"
+  language: "en"
+  copyright: "© 2024 Victor Retamal. All rights reserved."
+
+personal:
+  name: "Victor Retamal"
+  title: "Machine Learning Engineer"
+  subtitle: "Advancing autonomous systems through deep learning, computer vision, and multi-agent reinforcement learning"
+  label: "ML Engineer"
+  location: "Your Location"
+  email: "victor@example.com"
+  phone: "+1-234-567-8900"
+  website: "https://victor-retamal.com"
+
+bio:
+  short: "ML Engineer specializing in computer vision, reinforcement learning, and multi-agent systems applied to autonomous robotics."
+  long: |
+    I'm a Machine Learning Engineer advancing the state of autonomous systems through cutting-edge ML algorithms
+    applied to robotics challenges. I develop novel deep learning architectures, computer vision models,
+    and reinforcement learning algorithms that enable intelligent behavior in UAVs, ground robots, and multi-agent systems.
+
+    My expertise spans computer vision for robotic perception (visual SLAM, object detection, visual servoing), deep reinforcement
+    learning for control and decision-making, and multi-agent learning for distributed coordination. I leverage advanced ML techniques
+    including transformer architectures, graph neural networks, and attention mechanisms to solve complex problems in navigation,
+    manipulation, and swarm intelligence. I bridge the gap between cutting-edge algorithms and production-ready robotic systems.
+
+    I develop and deploy learning-based solutions for autonomous systems, with particular focus on vision-based control (IBVS/PBVS),
+    learned navigation policies using model-free and model-based RL, and scalable multi-agent algorithms for heterogeneous robot teams.
+    My work has been validated across simulation platforms (Gazebo, Isaac Lab, MuJoCo) and physical systems including PX4-based
+    UAVs and various ground robot platforms.
+
+social:
+  linkedin: "your-linkedin"
+  github: "your-github"
+  twitter: "your-twitter"
+  orcid: "0000-0000-0000-0000"
+  researchgate: "your-researchgate"
+
+# Social media URL patterns
+social_urls:
+  linkedin: "https://linkedin.com/in/{username}"
+  github: "https://github.com/{username}"
+  twitter: "https://twitter.com/{username}"
+  orcid: "https://orcid.org/{username}"
+  researchgate: "https://researchgate.net/profile/{username}"
+
+# Page titles
+pages:
+  home: "Victor Retamal - ML Engineer"
+  projects: "Project Details"
+  cv: "Resume"
+  blog: "Blog"
+  blog_post: "Blog Post"
+
+# File paths and URLs
+assets:
+  resume_pdf: "/resume.pdf"
+  cv_download_filename: "Resume_Victor_Retamal.pdf"
+
+# Technical expertise areas for footer
+research_areas:
+  - "Computer Vision"
+  - "Reinforcement Learning"
+  - "Multi-Agent Systems"
+  - "Robotics Applications"

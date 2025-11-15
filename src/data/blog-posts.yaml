@@ -1,0 +1,90 @@
+posts:
+  - slug: "linear-regression-basics"
+    title: "Linear Regression: From Theory to Implementation"
+    date: "2024-09-26"
+    tags: ["machine-learning", "mathematics", "regression"]
+    summary: "Linear regression is one of the fundamental algorithms in machine learning. Explore the mathematical foundations and implement it from scratch using NumPy, complete with the normal equation derivation and performance evaluation."
+    readTime: "8 min"
+    notebook: "linear_regression_basics.ipynb"
+    featured: true
+
+  - slug: "numpy-fundamentals"
+    title: "NumPy Fundamentals for Machine Learning"
+    date: "2024-09-22"
+    tags: ["numpy", "python", "foundations"]
+    summary: "NumPy is the foundation of scientific computing in Python. Master array creation, broadcasting, mathematical operations, and performance optimization techniques essential for machine learning and data science."
+    readTime: "12 min"
+    notebook: "numpy_fundamentals.ipynb"
+    featured: true
+
+  - slug: "ml-pipeline-fundamentals"
+    title: "Machine Learning Pipeline Fundamentals"
+    date: "2024-09-20"
+    tags: ["machine-learning", "mlops", "engineering"]
+    summary: "Building robust, scalable machine learning systems requires more than just training a model. Learn the essential components of ML pipelines from data ingestion to model deployment and monitoring."
+    readTime: "15 min"
+    notebook: ""
+    featured: true
+
+  - slug: "data-visualization-intro"
+    title: "Data Visualization with Matplotlib: Complete Guide"
+    date: "2024-09-18"
+    tags: ["visualization", "matplotlib", "data-science"]
+    summary: "Data visualization is crucial for understanding patterns and insights. Master Matplotlib fundamentals with comprehensive examples covering statistical plots, customization, and best practices for effective communication."
+    readTime: "10 min"
+    notebook: "data_visualization_intro.ipynb"
+    featured: false
+
+  - slug: "transformer-attention-mechanisms"
+    title: "Understanding Transformer Attention Mechanisms"
+    date: "2024-09-15"
+    tags: ["machine-learning", "transformers", "attention"]
+    summary: "Deep dive into attention mechanisms in transformer architectures, exploring the mathematical foundations and practical implementations. We'll cover scaled dot-product attention, multi-head attention, and provide practical PyTorch implementations."
+    readTime: "8 min"
+    notebook: "transformer_attention.ipynb"
+    featured: false
+
+  - slug: "learning-journey-intro"
+    title: "Intro: Diving Into Open-Source Courses"
+    date: "2025-03-27"
+    tags: ["learning", "courses", "personal-development"]
+    summary: "Starting a new series to share my learning journey through open-source courses like Geometric Deep Learning, Stanford CS149 Parallel Computing, CMU Optimal Control, and Applied Space System Engineering."
+    readTime: "3 min"
+    notebook: ""
+    featured: false
+
+  - slug: "systems-engineering-part-0"
+    title: "Practice Project for Systems Engineering - Part 0"
+    date: "2025-05-22"
+    tags: ["systems-engineering", "v-model", "rc-racing", "embedded"]
+    summary: "A prelude to a mini-series applying systems engineering principles to a 1/14-scale RC buggy project. Fresh from an AIAA course on space-grade SE practice, exploring the V-model methodology."
+    readTime: "5 min"
+    notebook: ""
+    featured: true
+
+  - slug: "systems-engineering-part-1"
+    title: "Practice Project for Systems Engineering - Part 1"
+    date: "2025-05-23"
+    tags: ["systems-engineering", "requirements", "stakeholder-analysis", "rc-racing"]
+    summary: "Diving into requirements engineering for an RC safety system. From stakeholder identification through mission definition to system requirements, following the V-model methodology with practical examples."
+    readTime: "15 min"
+    notebook: ""
+    featured: true
+
+  - slug: "systems-engineering-part-2"
+    title: "Practice Project for Systems Engineering - Part 2"
+    date: "2025-05-24"
+    tags: ["systems-engineering", "architecture", "software-design", "embedded", "esp32"]
+    summary: "System architecture development for the RC safety system. Covering functional architecture, physical architecture, and software implementation with ESP32 and Arduino, including state machines and failsafe mechanisms."
+    readTime: "20 min"
+    notebook: ""
+    featured: true
+
+blog_config:
+  title: "Research Blog"
+  subtitle: "Machine Learning & Mathematics"
+  description: "Jupyter notebooks, research insights, and technical deep-dives into machine learning and mathematical foundations."
+  author: "Victor Retamal"
+  posts_per_page: 10
+  enable_tags: true
+  enable_search: false  # For future implementation
