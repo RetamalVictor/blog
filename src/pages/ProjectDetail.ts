@@ -91,12 +91,33 @@ export class ProjectDetailPage {
         const categoryLabel = this.getCategoryLabel();
         const categoryColor = this.getCategoryColor();
 
-        // Update category badges
-        const categoryElements = document.querySelectorAll('#project-category, #project-category-detail');
-        categoryElements.forEach(element => {
-            element.textContent = categoryLabel;
-            element.className = `inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${categoryColor} text-white`;
-        });
+        // Update category badge in hero
+        const categoryElement = document.getElementById('project-category');
+        if (categoryElement) {
+            categoryElement.textContent = categoryLabel;
+            categoryElement.className = `inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${categoryColor} text-white`;
+        }
+
+        // Update category detail section with tags if available
+        const categoryDetailElement = document.getElementById('project-category-detail');
+        if (categoryDetailElement) {
+            if (this.project.tags && this.project.tags.length > 0) {
+                // Show tags as multiple badges
+                categoryDetailElement.outerHTML = `
+                    <div id="project-category-detail" class="flex flex-wrap gap-2">
+                        ${this.project.tags.map(tag => `
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${categoryColor} text-white">
+                                ${tag}
+                            </span>
+                        `).join('')}
+                    </div>
+                `;
+            } else {
+                // Fallback to category label
+                categoryDetailElement.textContent = categoryLabel;
+                categoryDetailElement.className = `inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${categoryColor} text-white`;
+            }
+        }
 
         // Update year details
         const yearDetail = document.getElementById('project-year-detail');

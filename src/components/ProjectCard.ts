@@ -28,9 +28,9 @@ export class ProjectCard {
                     ${this.renderTechnologies()}
                 </div>
                 <div class="flex items-center justify-between">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${this.getCategoryColor()}">
-                        ${this.getCategoryLabel()}
-                    </span>
+                    <div class="flex flex-wrap gap-2">
+                        ${this.renderTags()}
+                    </div>
                     <div class="flex space-x-2">
                         ${this.renderLinks()}
                     </div>
@@ -81,6 +81,24 @@ export class ProjectCard {
             .map(tech => `
                 <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
                     ${tech}
+                </span>
+            `).join('');
+    }
+
+    private renderTags(): string {
+        if (!this.project.tags || this.project.tags.length === 0) {
+            // Fallback to category if no tags
+            return `
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${this.getCategoryColor()}">
+                    ${this.getCategoryLabel()}
+                </span>
+            `;
+        }
+
+        return this.project.tags
+            .map(tag => `
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${this.getCategoryColor()}">
+                    ${tag}
                 </span>
             `).join('');
     }
