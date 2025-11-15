@@ -20,13 +20,12 @@ export class Navigation {
      * Navigate to a route using the router if available, otherwise use browser navigation
      */
     public static to(path: string): void {
-        const fullPath = Navigation.getFullPath(path);
-
         if (Navigation.router) {
-            // Use client-side routing
-            Navigation.router.navigate(fullPath);
+            // Use client-side routing - router handles base path internally
+            Navigation.router.navigate(path);
         } else {
-            // Fallback to browser navigation
+            // Fallback to browser navigation - need full path
+            const fullPath = Navigation.getFullPath(path);
             window.location.href = fullPath;
         }
     }
