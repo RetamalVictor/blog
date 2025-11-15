@@ -116,13 +116,8 @@ export class BlogPostPage {
                 throw new Error(`Failed to load content: ${response.statusText}`);
             }
 
-            let content = await response.text();
-
-            // If it's a markdown file, convert to HTML (basic conversion)
-            if (contentPath.endsWith('.md')) {
-                content = this.convertMarkdownToHTML(content);
-            }
-
+            // Notebook files are already HTML, just return them
+            const content = await response.text();
             return content;
         } catch (error) {
             console.error(`Error loading content for ${slug}:`, error);
