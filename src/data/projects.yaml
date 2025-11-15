@@ -106,6 +106,23 @@ projects:
     githubUrl: "https://github.com/victor-retamal/aerial-vslam"
     demoUrl: "https://aerial-mapping-demo.com"
 
+  - id: "7"
+    title: "PX4 State Sharing: Distributed Multi-UAV Formation Control"
+    description: "Peer-to-peer state sharing module for PX4 enabling decentralized UAV coordination through direct MAVLink communication."
+    longDescription: "This project implements a distributed formation control system for multiple UAVs using PX4's state-sharing module, eliminating the need for centralized control. The system operates through three key phases: initialization (state broadcasting activation), discovery (neighbor position reception via MAVLink), and coordination (formation velocity calculation using relative positioning). The architecture features a communication stack that broadcasts vehicle telemetry using MAVLink protocol with broadcast/multicast networking, micro-DDS bridge for ROS2 topic translation, and distributed neighbor detection mechanisms. Demonstrated with three PX4-based quadrotors maintaining structured flight patterns through purely peer-to-peer coordination. Currently under review in PX4 pull request #25884, representing active contribution to the upstream autopilot project."
+    technologies:
+      - "C++"
+      - "Python"
+      - "PX4"
+      - "MAVLink"
+      - "ROS2"
+      - "micro-DDS"
+      - "Gazebo"
+    category: "robotics"
+    featured: true
+    year: 2024
+    githubUrl: "https://github.com/RetamalVictor/PX4-State-Sharing-Demo"
+
 # Configuration for projects section
 section:
   title: "Featured Projects"
