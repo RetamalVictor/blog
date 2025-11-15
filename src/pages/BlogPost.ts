@@ -8,6 +8,13 @@ import * as yaml from 'js-yaml';
 import blogDataYaml from '../data/blog-posts.yaml?raw';
 import { marked } from 'marked';
 
+// Import markdown files as raw strings
+import learningJourneyMd from '../content/markdown/learning-journey-intro.md?raw';
+import mlPipelineMd from '../content/markdown/ml_pipeline_fundamentals.md?raw';
+import sysEngPart0Md from '../content/markdown/systems-engineering-part-0.md?raw';
+import sysEngPart1Md from '../content/markdown/systems-engineering-part-1.md?raw';
+import sysEngPart2Md from '../content/markdown/systems-engineering-part-2.md?raw';
+
 interface BlogPost {
     slug: string;
     title: string;
@@ -70,20 +77,29 @@ export class BlogPostPage {
     }
 
     private async getPostContent(slug: string): Promise<string> {
-        // Map slugs to content files
-        const contentMap: Record<string, string> = {
-            "linear-regression-basics": "/src/content/notebooks/linear_regression_basics.html",
-            "numpy-fundamentals": "/src/content/notebooks/numpy_fundamentals.html",
-            "ml-pipeline-fundamentals": "/src/content/markdown/ml_pipeline_fundamentals.md",
-            "learning-journey-intro": "/src/content/markdown/learning-journey-intro.md",
-            "systems-engineering-part-0": "/src/content/markdown/systems-engineering-part-0.md",
-            "systems-engineering-part-1": "/src/content/markdown/systems-engineering-part-1.md",
-            "systems-engineering-part-2": "/src/content/markdown/systems-engineering-part-2.md"
+        // Map slugs to imported markdown content
+        const markdownContent: Record<string, string> = {
+            "learning-journey-intro": learningJourneyMd,
+            "ml-pipeline-fundamentals": mlPipelineMd,
+            "systems-engineering-part-0": sysEngPart0Md,
+            "systems-engineering-part-1": sysEngPart1Md,
+            "systems-engineering-part-2": sysEngPart2Md
         };
 
-        const contentPath = contentMap[slug];
+        // Map slugs to notebook HTML files (still need to be fetched)
+        const notebookPaths: Record<string, string> = {
+            "linear-regression-basics": "/src/content/notebooks/linear_regression_basics.html",
+            "numpy-fundamentals": "/src/content/notebooks/numpy_fundamentals.html"
+        };
 
-        if (!contentPath) {
+        // Check if it's a markdown post
+        if (markdownContent[slug]) {
+            return this.convertMarkdownToHTML(markdownContent[slug]);
+        }
+
+        // Check if it's a notebook
+        const notebookPath = notebookPaths[slug];
+        if (!notebookPath) {
             // Return default content for unmapped slugs
             return `
                 <div class="blog-content">
@@ -94,8 +110,8 @@ export class BlogPostPage {
         }
 
         try {
-            // Load content from file
-            const response = await fetch(contentPath);
+            // Load notebook HTML from file
+            const response = await fetch(notebookPath);
             if (!response.ok) {
                 throw new Error(`Failed to load content: ${response.statusText}`);
             }
