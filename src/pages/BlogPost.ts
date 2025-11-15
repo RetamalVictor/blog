@@ -139,7 +139,14 @@ export class BlogPostPage {
         } as any);  // Cast to any to avoid TypeScript issues with newer marked versions
 
         // Use marked to convert markdown to HTML
-        let html = marked.parse(markdown);
+        let html = marked.parse(markdown) as string;
+
+        // Fix image paths for production (add base URL)
+        const baseUrl = import.meta.env.BASE_URL || '/';
+        html = html.replace(
+            /(<img[^>]+src=["'])\/images\//g,
+            `$1${baseUrl}images/`
+        );
 
         // Wrap in blog-content div
         html = `<div class="blog-content">${html}</div>`;
@@ -178,7 +185,7 @@ export class BlogPostPage {
                         <div class="flex flex-wrap items-center gap-4 text-blue-100">
                             <span>${this.formatDate(this.blogPost.date)}</span>
                             <span>${this.blogPost.readTime} read</span>
-                            <span>📓 Jupyter Notebook</span>
+                            <span>${this.blogPost.notebook ? '📓 Jupyter Notebook' : '📝 Article'}</span>
                         </div>
 
                         <div class="flex flex-wrap gap-2 mt-4">
