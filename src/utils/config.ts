@@ -1,0 +1,273 @@
+import * as yaml from 'js-yaml';
+
+// Import all configuration files as raw strings
+import siteConfigYaml from '../data/site-config.yaml?raw';
+import uiTextYaml from '../data/ui-text.yaml?raw';
+import themeConfigYaml from '../data/theme-config.yaml?raw';
+import researchAreasYaml from '../data/research-areas.yaml?raw';
+import projectsYaml from '../data/projects.yaml?raw';
+
+// Configuration interfaces
+export interface SiteConfig {
+    site: {
+        title: string;
+        description: string;
+        url: string;
+        language: string;
+        copyright: string;
+    };
+    personal: {
+        name: string;
+        title: string;
+        subtitle: string;
+        label: string;
+        location: string;
+        email: string;
+        phone: string;
+        website: string;
+    };
+    bio: {
+        short: string;
+        long: string;
+    };
+    social: {
+        linkedin: string;
+        github: string;
+        twitter: string;
+        orcid: string;
+        researchgate: string;
+    };
+    social_urls: {
+        [key: string]: string;
+    };
+    pages: {
+        [key: string]: string;
+    };
+    assets: {
+        resume_pdf: string;
+        cv_download_filename: string;
+    };
+    research_areas: string[];
+}
+
+export interface UIText {
+    navigation: any;
+    buttons: any;
+    sections: any;
+    content: any;
+    status: any;
+    errors: any;
+    accessibility: any;
+    blog: any;
+    projects: any;
+    forms: any;
+    time: any;
+    placeholders: any;
+}
+
+export interface ThemeConfig {
+    brand: any;
+    project_categories: any;
+    blog_tags: any;
+    technology_tags: any;
+    gradients: any;
+    buttons: any;
+    status: any;
+    backgrounds: any;
+    text: any;
+    layout: any;
+    animations: any;
+    components: any;
+    three_viewer: any;
+}
+
+export interface ResearchAreas {
+    research_focus: {
+        title: string;
+        description: string;
+    };
+    areas: Array<{
+        id: string;
+        title: string;
+        description: string;
+        icon_path: string;
+        color_scheme: {
+            background: string;
+            icon: string;
+        };
+    }>;
+    visualization: {
+        title: string;
+        loading_text: string;
+        placeholder_text: string;
+    };
+}
+
+export interface ProjectsData {
+    projects: Array<{
+        id: string;
+        title: string;
+        description: string;
+        longDescription?: string;
+        technologies: string[];
+        category: string;
+        featured: boolean;
+        year: number;
+        githubUrl?: string;
+        demoUrl?: string;
+        imageUrl?: string;
+    }>;
+    section: {
+        title: string;
+        description: string;
+        show_featured_only: boolean;
+    };
+}
+
+/**
+ * Configuration manager for loading and accessing all app configuration
+ */
+export class ConfigManager {
+    private static instance: ConfigManager;
+    private siteConfig: SiteConfig | null = null;
+    private uiText: UIText | null = null;
+    private themeConfig: ThemeConfig | null = null;
+    private researchAreas: ResearchAreas | null = null;
+    private projectsData: ProjectsData | null = null;
+
+    private constructor() {}
+
+    public static getInstance(): ConfigManager {
+        if (!ConfigManager.instance) {
+            ConfigManager.instance = new ConfigManager();
+        }
+        return ConfigManager.instance;
+    }
+
+    /**
+     * Initialize all configuration data
+     */
+    public async initialize(): Promise<void> {
+        try {
+            // Load all configurations
+            this.siteConfig = yaml.load(siteConfigYaml) as SiteConfig;
+            this.uiText = yaml.load(uiTextYaml) as UIText;
+            this.themeConfig = yaml.load(themeConfigYaml) as ThemeConfig;
+            this.researchAreas = yaml.load(researchAreasYaml) as ResearchAreas;
+            this.projectsData = yaml.load(projectsYaml) as ProjectsData;
+
+            console.log('Configuration loaded successfully');
+        } catch (error) {
+            console.error('Failed to load configuration:', error);
+            throw error;
+        }
+    }
+
+    /**
+     * Get site configuration
+     */
+    public getSiteConfig(): SiteConfig {
+        if (!this.siteConfig) {
+            throw new Error('Site configuration not loaded. Call initialize() first.');
+        }
+        return this.siteConfig;
+    }
+
+    /**
+     * Get UI text configuration
+     */
+    public getUIText(): UIText {
+        if (!this.uiText) {
+            throw new Error('UI text not loaded. Call initialize() first.');
+        }
+        return this.uiText;
+    }
+
+    /**
+     * Get theme configuration
+     */
+    public getThemeConfig(): ThemeConfig {
+        if (!this.themeConfig) {
+            throw new Error('Theme configuration not loaded. Call initialize() first.');
+        }
+        return this.themeConfig;
+    }
+
+    /**
+     * Get research areas data
+     */
+    public getResearchAreas(): ResearchAreas {
+        if (!this.researchAreas) {
+            throw new Error('Research areas not loaded. Call initialize() first.');
+        }
+        return this.researchAreas;
+    }
+
+    /**
+     * Get projects data
+     */
+    public getProjectsData(): ProjectsData {
+        if (!this.projectsData) {
+            throw new Error('Projects data not loaded. Call initialize() first.');
+        }
+        return this.projectsData;
+    }
+
+    /**
+     * Get social media URL for a given network and username
+     */
+    public getSocialURL(network: string, username: string): string {
+        const siteConfig = this.getSiteConfig();
+        const template = siteConfig.social_urls[network.toLowerCase()];
+        return template ? template.replace('{username}', username) : '#';
+    }
+
+    /**
+     * Replace template variables in a string
+     */
+    public replaceTemplateVars(template: string, variables: { [key: string]: any }): string {
+        let result = template;
+
+        // Helper function to get nested object value
+        const getNestedValue = (obj: any, path: string): any => {
+            return path.split('.').reduce((curr, prop) => curr?.[prop], obj);
+        };
+
+        // Replace variables like {{site.title}} or {{personal.name}}
+        result = result.replace(/\{\{([^}]+)\}\}/g, (match, path) => {
+            const value = getNestedValue(variables, path.trim());
+            return value !== undefined ? String(value) : match;
+        });
+
+        return result;
+    }
+
+    /**
+     * Get all configuration data for template replacement
+     */
+    public getAllConfig(): { [key: string]: any } {
+        return {
+            site: this.getSiteConfig().site,
+            personal: this.getSiteConfig().personal,
+            bio: this.getSiteConfig().bio,
+            social: this.getSiteConfig().social,
+            pages: this.getSiteConfig().pages,
+            assets: this.getSiteConfig().assets,
+            research_areas: this.getSiteConfig().research_areas,
+            navigation: this.getUIText().navigation,
+            buttons: this.getUIText().buttons,
+            sections: this.getUIText().sections,
+            content: this.getUIText().content,
+            status: this.getUIText().status,
+            errors: this.getUIText().errors,
+            accessibility: this.getUIText().accessibility,
+            blog: this.getUIText().blog,
+            projects: this.getUIText().projects,
+            placeholders: this.getUIText().placeholders,
+            theme: this.getThemeConfig()
+        };
+    }
+}
+
+// Export singleton instance
+export const config = ConfigManager.getInstance();

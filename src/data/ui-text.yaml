@@ -1,0 +1,147 @@
+# UI Text Configuration
+# Centralized text content for the entire application
+
+# Navigation
+navigation:
+  primary:
+    about: "About"
+    projects: "Projects"
+    research: "Research"
+    blog: "Blog"
+    resume: "Resume"
+
+  mobile:
+    menu_icon_aria: "Mobile menu"
+
+# Buttons
+buttons:
+  back_to_portfolio: "Back to Portfolio"
+  view_details: "View Details"
+  view_projects: "View Projects"
+  research_focus: "Core Expertise"
+  view_online_cv: "View Resume"
+  download_cv: "Download Resume (PDF)"
+  download_pdf: "Download PDF"
+  read_more: "Read Full Post"
+  read_full_post: "Read Full Post"
+  view_code: "View Code"
+  back: "Back"
+  back_to_blog: "Back to Blog"
+  copy: "Copy"
+  copied: "Copied!"
+  failed: "Failed"
+
+# Section Headers
+sections:
+  about: "About"
+  research_focus: "Core Expertise"
+  featured_projects: "Featured Projects"
+  academic_cv: "Professional Experience"
+  research_blog: "Technical Blog"
+  blog_posts: "Blog Posts"
+  education: "Education"
+  experience: "Experience"
+  publications: "Publications"
+  projects: "Projects"
+  skills: "Skills"
+  awards_honors: "Awards & Honors"
+  research_areas: "Research Areas"
+  connect: "Connect"
+
+# Content descriptions
+content:
+  about_description: |
+    I'm a Machine Learning Research Engineer specializing in computer vision, reinforcement learning, and multi-agent systems.
+    I build production ML systems that enable intelligent behavior in autonomous robots, from UAVs and ground vehicles
+    to distributed swarm systems operating in complex real-world environments.
+
+  about_extended: |
+    I develop and deploy deep learning architectures for robotic perception and control, with real-world applications
+    in visual SLAM, learned navigation policies, and multi-agent coordination. My work combines cutting-edge ML research
+    with practical robotics applications, bridging the gap between state-of-the-art algorithms and physical systems.
+
+  cv_description: |
+    Download my resume to learn more about my technical background, projects,
+    and professional experience in ML engineering, computer vision, and autonomous robotics.
+
+  blog_subtitle: "Machine Learning & Mathematics"
+  blog_description: "Jupyter notebooks, technical insights, and implementation deep-dives"
+
+# Loading and status messages
+status:
+  loading: "Loading..."
+  loading_content: "Content loading..."
+  loading_3d_viz: "Interactive 3D visualization loading..."
+  loading_3d_placeholder: "3D Visualization Loading..."
+  processing: "Processing..."
+
+# Error messages
+errors:
+  blog_unavailable: "Blog Unavailable"
+  blog_load_failed: "Failed to load blog posts. Please try again later."
+  cv_unavailable: "Resume Unavailable"
+  cv_load_failed: "Failed to load resume data. Please try again later."
+  project_load_failed: "Failed to load project template."
+  post_not_found: "Post Not Found"
+  template_load_failed: "Failed to load template"
+  general_error: "An error occurred. Please try again."
+
+# Accessibility labels
+accessibility:
+  linkedin: "LinkedIn"
+  github: "GitHub"
+  twitter: "Twitter"
+  orcid: "ORCID"
+  researchgate: "ResearchGate"
+  menu: "Menu"
+  close_menu: "Close menu"
+  skip_to_content: "Skip to content"
+
+# Blog specific
+blog:
+  notebook_indicator: "📓 Jupyter Notebook"
+  read_time_suffix: "read"
+  author_prefix: "By"
+  published_on: "Published on"
+  tags: "Tags"
+
+# Project specific
+projects:
+  view_demo: "View Demo"
+  view_source: "View Source"
+  technologies: "Technologies"
+  category: "Category"
+  year: "Year"
+  links: "Links"
+
+# Form labels (if any forms are added later)
+forms:
+  email: "Email"
+  message: "Message"
+  name: "Name"
+  subject: "Subject"
+  send: "Send"
+  required: "Required"
+
+# Time and date
+time:
+  present: "Present"
+  months:
+    - "Jan"
+    - "Feb"
+    - "Mar"
+    - "Apr"
+    - "May"
+    - "Jun"
+    - "Jul"
+    - "Aug"
+    - "Sep"
+    - "Oct"
+    - "Nov"
+    - "Dec"
+
+# Comments and placeholders
+placeholders:
+  projects_loading: "<!-- Projects will be loaded here -->"
+  blog_posts_loading: "<!-- Blog posts will be loaded here -->"
+  content_loading: "<!-- Content will be loaded here -->"

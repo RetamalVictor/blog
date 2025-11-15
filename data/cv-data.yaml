@@ -1,0 +1,144 @@
+cv:
+  name: Your Name
+  label: PhD Candidate in Medical Imaging & AI
+  location: Your Location
+  email: your.email@example.com
+  phone: "+1-234-567-8900"
+  website: https://yourwebsite.com
+  social_networks:
+    - network: LinkedIn
+      username: your-linkedin
+    - network: GitHub
+      username: your-github
+    - network: ORCID
+      username: 0000-0000-0000-0000
+
+sections:
+  education:
+    - institution: Your University
+      area: Medical Imaging & Artificial Intelligence
+      degree: PhD
+      start_date: 2020-09
+      end_date: present
+      highlights:
+        - "Research focus: 3D medical image analysis and machine learning"
+        - "Dissertation: Advanced techniques for medical image segmentation"
+        - "GPA: 3.9/4.0"
+
+    - institution: Your Previous University
+      area: Computer Science
+      degree: Master of Science
+      start_date: 2018-09
+      end_date: 2020-05
+      highlights:
+        - "Specialization in Computer Vision and Machine Learning"
+        - "Thesis: Deep learning approaches for medical image classification"
+        - "Magna Cum Laude"
+
+  experience:
+    - company: Research Lab / University
+      position: Graduate Research Assistant
+      start_date: 2020-09
+      end_date: present
+      highlights:
+        - "Developed novel 3D visualization techniques for medical imaging data"
+        - "Published 5 peer-reviewed papers in top-tier conferences"
+        - "Collaborated with clinical teams on image analysis projects"
+        - "Mentored 3 undergraduate research students"
+
+    - company: Tech Company
+      position: Machine Learning Intern
+      start_date: 2019-06
+      end_date: 2019-08
+      highlights:
+        - "Implemented deep learning models for medical image segmentation"
+        - "Improved model accuracy by 15% through novel data augmentation techniques"
+        - "Presented findings to executive team and medical advisory board"
+
+  publications:
+    - title: "Advanced 3D Segmentation Techniques for Medical Imaging"
+      authors: ["Your Name", "Advisor Name", "Collaborator Name"]
+      journal: "IEEE Transactions on Medical Imaging"
+      date: 2024
+      doi: "10.1109/TMI.2024.example"
+
+    - title: "Deep Learning Approaches for Automated Medical Diagnosis"
+      authors: ["Your Name", "Co-author Name"]
+      journal: "Medical Image Analysis"
+      date: 2023
+      doi: "10.1016/j.media.2023.example"
+
+  projects:
+    - name: "3D Medical Visualization Platform"
+      date: 2023-2024
+      highlights:
+        - "Built interactive 3D visualization system using Three.js and WebGL"
+        - "Integrated real-time medical image processing capabilities"
+        - "Deployed web-based platform for clinical research collaboration"
+        - "Technologies: TypeScript, Three.js, WebGL, Python, PyTorch"
+
+    - name: "Automated Lung Segmentation Tool"
+      date: 2022-2023
+      highlights:
+        - "Developed CNN-based segmentation model for CT lung images"
+        - "Achieved 95% accuracy on benchmark datasets"
+        - "Integrated with clinical workflow systems"
+        - "Technologies: Python, PyTorch, DICOM, ITK"
+
+  skills:
+    - label: "Programming Languages"
+      details: "Python, TypeScript/JavaScript, C++, R, MATLAB"
+    - label: "Machine Learning"
+      details: "PyTorch, TensorFlow, Scikit-learn, OpenCV, ITK, SimpleITK"
+    - label: "Web Technologies"
+      details: "Three.js, WebGL, React, Node.js, HTML5, CSS3"
+    - label: "Medical Imaging"
+      details: "DICOM, NIfTI, 3D Slicer, ITK-SNAP, ImageJ/FIJI"
+    - label: "Tools & Platforms"
+      details: "Git, Docker, AWS, SLURM, Linux, LaTeX"
+
+  awards:
+    - title: "Outstanding Graduate Student Award"
+      date: 2023
+      awarder: "Department of Computer Science"
+
+    - title: "Best Paper Award"
+      date: 2023
+      awarder: "International Conference on Medical Image Computing"
+
+    - title: "Graduate Research Fellowship"
+      date: 2020-2024
+      awarder: "National Science Foundation"
+
+design:
+  theme: classic
+  font_size: 10pt
+  page_size: letterpaper
+  color: blue
+  disable_page_numbering: false
+  page_numbering_style: "Page [page_number] of [total_pages]"
+  disable_last_updated_date: false
+  last_updated_date_style: "Last updated in [month] [year]"
+  header_separator: true
+  use_icons_for_connections: true
+  margins:
+    page:
+      top: 2 cm
+      bottom: 2 cm
+      left: 1.5 cm
+      right: 1.5 cm
+    section_title:
+      top: 0.3 cm
+      bottom: 0.2 cm
+    entry_area:
+      left_and_right: 0.2 cm
+      vertical_between: 0.2 cm
+      date_and_location_width: 4.5 cm
+    highlights_area:
+      top: 0.10 cm
+      left: 0.4 cm
+      vertical_between_bullet_points: 0.10 cm
+    header:
+      vertical_between_name_and_connections: 0.3 cm
+      bottom: 0.3 cm
+      horizontal_between_connections: 0.5 cm

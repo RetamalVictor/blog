@@ -1,0 +1,320 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables */
+:root {
+  --primary-blue: #2563eb;
+  --primary-purple: #7c3aed;
+  --accent-blue: #3b82f6;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --bg-section: #f9fafb;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+/* Component Styles */
+.btn-primary {
+  @apply bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 shadow-md hover:shadow-lg;
+}
+
+.btn-secondary {
+  @apply bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-200 border border-blue-600;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden;
+}
+
+.section-padding {
+  @apply py-16 px-6;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive Typography */
+.hero-title {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+}
+
+.section-title {
+  @apply text-2xl md:text-3xl lg:text-4xl font-bold;
+}
+
+/* Three.js Container */
+.three-container {
+  @apply relative w-full h-64 md:h-80 bg-gray-100 rounded-lg overflow-hidden;
+}
+
+.three-container canvas {
+  @apply w-full h-full;
+}
+
+/* Blog content styling */
+.blog-content {
+  line-height: 1.8;
+  color: #374151;
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.blog-content h2 {
+  font-size: 1.875rem;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.blog-content h3 {
+  font-size: 1.5rem;
+}
+
+.blog-content h4 {
+  font-size: 1.25rem;
+}
+
+.blog-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.blog-content strong {
+  font-weight: 700;
+  color: #111827;
+}
+
+.blog-content em {
+  font-style: italic;
+}
+
+.blog-content .lead {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #4b5563;
+  margin-bottom: 2rem;
+}
+
+.blog-content ul,
+.blog-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  list-style-position: outside;
+}
+
+.blog-content ul {
+  list-style-type: disc;
+}
+
+.blog-content ol {
+  list-style-type: decimal;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.blog-content li ul,
+.blog-content li ol {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-content pre {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.blog-content code {
+  background-color: #f1f5f9;
+  color: #dc2626;
+  padding: 0.125rem 0.25rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.blog-content pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+.blog-content .math-block {
+  margin: 2rem 0;
+  text-align: center;
+  overflow-x: auto;
+}
+
+.blog-content .katex-display {
+  margin: 1rem 0;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid #3b82f6;
+  background-color: #eff6ff;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+/* Table Styles */
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.875rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  display: block;
+}
+
+.blog-content table thead {
+  background-color: #f3f4f6;
+  border-bottom: 2px solid #d1d5db;
+}
+
+.blog-content table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  white-space: nowrap;
+}
+
+.blog-content table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #4b5563;
+}
+
+.blog-content table tr:hover {
+  background-color: #f9fafb;
+}
+
+.blog-content table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Make tables responsive */
+.blog-content .table-wrapper {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+/* Figure and Image styles */
+.blog-content figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.blog-content figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.blog-content figure figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Social badges - make them inline and compact */
+.blog-content p:has(a[href*="shields.io"]),
+.blog-content p:has(a[href*="twitter.com"]):has(img),
+.blog-content p:has(a[href*="linkedin.com"]):has(img),
+.blog-content p:has(a[href*="github.com"]):has(img),
+.blog-content p:has(a[href*="goodreads.com"]):has(img) {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.blog-content a:has(img[src*="shields.io"]) {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+/* Fix spacing for copyright and author notes */
+.blog-content p em:first-child {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* Horizontal rules */
+.blog-content hr {
+  border: none;
+  border-top: 2px solid #e5e7eb;
+  margin: 2rem 0;
+}
+
+/* Code block improvements */
+.blog-content pre {
+  max-width: 100%;
+}
+
+/* Links in blog content */
+.blog-content a {
+  color: #2563eb;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.blog-content a:hover {
+  color: #1d4ed8;
+}
+
+/* Prose utility classes for consistent typography */
+.prose {
+  max-width: none;
+}
+
+.prose-lg {
+  font-size: 1.125rem;
+}
+
+.max-w-none {
+  max-width: none;
+}

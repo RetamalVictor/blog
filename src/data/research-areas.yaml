@@ -1,0 +1,37 @@
+# Technical Areas Configuration
+# Data for the core expertise section
+
+research_focus:
+  title: "Core Expertise"
+  description: "Advancing machine learning algorithms for autonomous systems, spanning computer vision, reinforcement learning, and multi-agent coordination"
+
+areas:
+  - id: "computer-vision"
+    title: "Computer Vision & Perception"
+    description: "Deep learning models for visual perception in robotics: visual SLAM, object detection and tracking, visual servoing (IBVS/PBVS), and geometric vision control. Developing transformer-based architectures and self-supervised learning for robust scene understanding."
+    icon_path: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
+    color_scheme:
+      background: "bg-blue-100"
+      icon: "text-blue-600"
+
+  - id: "reinforcement-learning"
+    title: "Deep Reinforcement Learning"
+    description: "Model-free and model-based RL algorithms for robotic control and navigation. Developing sample-efficient learning methods, sim-to-real transfer techniques, and hierarchical RL for complex manipulation and navigation tasks in UAVs and ground robots."
+    icon_path: "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+    color_scheme:
+      background: "bg-purple-100"
+      icon: "text-purple-600"
+
+  - id: "multi-agent"
+    title: "Multi-Agent Learning"
+    description: "Distributed deep learning algorithms for cooperative multi-robot systems. Research on emergent behaviors, communication protocols, and scalable MARL algorithms (QMIX, MADDPG) for swarm intelligence and heterogeneous robot coordination."
+    icon_path: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+    color_scheme:
+      background: "bg-green-100"
+      icon: "text-green-600"
+
+# Configuration for the 3D visualization section
+visualization:
+  title: "Interactive Robotics Visualization"
+  loading_text: "Interactive Robotics Visualization"
+  placeholder_text: "3D Visualization Loading..."
