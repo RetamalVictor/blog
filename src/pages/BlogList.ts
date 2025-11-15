@@ -144,7 +144,7 @@ export class BlogListPage {
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
                 </button>
-                <span class="text-sm text-gray-500">📓 Jupyter Notebook</span>
+                ${post.notebook ? '<span class="text-sm text-gray-500">📓 Jupyter Notebook</span>' : '<span class="text-sm text-gray-500">📝 Article</span>'}
             </div>
         `;
 
