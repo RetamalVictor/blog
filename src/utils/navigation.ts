@@ -49,6 +49,8 @@ export class Navigation {
      * Navigate to blog list page
      */
     public static toBlogList(): void {
+        // Router strips base path from routes, so /blog/blog becomes /blog
+        // Just use the route as-is
         Navigation.to('/blog');
     }
 
@@ -56,6 +58,8 @@ export class Navigation {
      * Navigate to specific blog post
      */
     public static toBlogPost(slug: string): void {
+        // Router strips base path from routes, so /blog/blog/:slug becomes /blog/:slug
+        // Just use the route as-is
         Navigation.to(`/blog/${slug}`);
     }
 
