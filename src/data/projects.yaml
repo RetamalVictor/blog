@@ -3,113 +3,12 @@
 
 projects:
   - id: "1"
-    title: "Multi-UAV Cooperative Navigation System"
-    description: "Distributed SLAM and path planning for autonomous drone swarms with real-time coordination and collision avoidance."
-    longDescription: "This project implements a fully distributed navigation system for multi-UAV operations in GPS-denied environments. The system features decentralized SLAM with map merging capabilities, consensus-based state estimation using EKF/UKF, and dynamic path planning with guaranteed collision avoidance. Deployed on PX4-based quadrotors, the system achieves robust performance in indoor and outdoor environments with up to 10 simultaneous UAVs. Key innovations include efficient map sharing protocols, adaptive formation control using Lie algebra formulations, and resilient communication strategies for intermittent connectivity scenarios."
-    technologies:
-      - "C++"
-      - "Python"
-      - "PX4"
-      - "ROS2"
-      - "Gazebo"
-      - "EKF/UKF"
-      - "SLAM"
-    category: "robotics"
-    featured: true
-    year: 2024
-    githubUrl: "https://github.com/victor-retamal/multi-uav-navigation"
-    demoUrl: "https://multi-uav-demo.com"
-
-  - id: "2"
-    title: "Vision-Based Drone Landing Control"
-    description: "Precision autonomous landing system using visual servoing (IBVS/PBVS) and geometric vision control for UAVs."
-    longDescription: "Advanced vision-based control system for precision UAV landing on static and moving platforms. The system integrates Image-Based Visual Servoing (IBVS) and Position-Based Visual Servoing (PBVS) with adaptive switching based on environmental conditions. Features include robust marker detection using AprilTags and natural features, real-time pose estimation with uncertainty quantification, and predictive control for wind disturbance rejection. Achieves centimeter-level landing accuracy on moving platforms (ships, vehicles) with speeds up to 15 m/s. Extensively tested in simulation (Gazebo, JSBSim) and real-world deployments on PX4 platforms."
-    technologies:
-      - "Python"
-      - "OpenCV"
-      - "PX4"
-      - "IBVS/PBVS"
-      - "Gazebo"
-      - "JSBSim"
-      - "ROS2"
-    category: "computer-vision"
-    featured: true
-    year: 2024
-    githubUrl: "https://github.com/victor-retamal/vision-landing"
-
-  - id: "3"
-    title: "Multi-Agent Path Planning Framework"
-    description: "Scalable reinforcement learning framework for heterogeneous robot teams with decentralized decision making."
-    longDescription: "Comprehensive framework for multi-agent path planning in complex environments with mixed robot types (UAVs, UGVs, manipulators). Implements state-of-the-art multi-agent reinforcement learning algorithms including QMIX, MADDPG, and custom attention-based architectures. Features include heterogeneous agent handling with different dynamics and constraints, hierarchical planning with task decomposition, and sim-to-real transfer using domain randomization. The system scales to 50+ agents with real-time replanning capabilities. Validated in Isaac Lab and MuJoCo with successful transfer to physical robot teams."
-    technologies:
-      - "Python"
-      - "PyTorch"
-      - "Isaac Lab"
-      - "MuJoCo"
-      - "Multi-Agent RL"
-      - "ROS2"
-    category: "machine-learning"
-    featured: true
-    year: 2024
-    githubUrl: "https://github.com/victor-retamal/multi-agent-planning"
-    demoUrl: "https://multi-agent-planning-demo.com"
-
-  - id: "4"
-    title: "Adaptive Control for Ground Robot Fleet"
-    description: "Model predictive control system for autonomous ground robots navigating rough terrain with online adaptation."
-    longDescription: "Robust control framework for wheeled and legged robots operating in challenging environments. Implements adaptive model predictive control (MPC) with online system identification, terrain classification using proprioceptive and exteroceptive sensors, and distributed coordination for multi-robot operations. The system features state-space formulations with Lie algebra constraints, real-time trajectory optimization with obstacle avoidance, and learning-based adaptation for unknown terrain properties. Deployed on Boston Dynamics Spot and custom wheeled platforms with demonstrated performance in search and rescue scenarios."
-    technologies:
-      - "C++"
-      - "Python"
-      - "MPC"
-      - "State-space Control"
-      - "PyBullet"
-      - "ROS2"
-      - "Lie Algebra"
-    category: "robotics"
-    featured: false
-    year: 2023
-    githubUrl: "https://github.com/victor-retamal/adaptive-ground-control"
-
-  - id: "5"
-    title: "UAV Swarm Coordination Platform"
-    description: "Decentralized swarm intelligence system for collaborative UAV missions with emergent behavior capabilities."
-    longDescription: "End-to-end platform for coordinating large-scale UAV swarms in complex missions including search and rescue, area coverage, and target tracking. Implements bio-inspired algorithms with distributed consensus, emergent flocking behaviors with collision avoidance, and resilient communication protocols for lossy networks. Features include real-time mission planning and task allocation, heterogeneous swarm support (fixed-wing and multirotors), and hardware-in-the-loop testing with PX4 SITL. Successfully demonstrated with 20 physical drones and 100+ simulated agents in Gazebo."
-    technologies:
-      - "Python"
-      - "C++"
-      - "PX4"
-      - "Gazebo"
-      - "Swarm Intelligence"
-      - "ROS2"
-      - "MAVSDK"
-    category: "multi-agent"
-    featured: true
-    year: 2024
-    githubUrl: "https://github.com/victor-retamal/uav-swarm-platform"
-
-  - id: "6"
-    title: "Visual SLAM for Aerial Mapping"
-    description: "Real-time 3D reconstruction and localization system for UAVs using monocular and stereo vision."
-    longDescription: "High-performance visual SLAM system optimized for aerial platforms with limited computational resources. Combines direct and feature-based methods for robust tracking, implements efficient loop closure with place recognition, and generates dense 3D reconstructions for mapping applications. The system features IMU fusion using ESKF for motion prediction, adaptive keyframe selection for memory efficiency, and multi-scale mapping with octree representations. Achieves real-time performance (30 FPS) on embedded platforms (Jetson Xavier) with drift rates below 0.5% of trajectory length."
-    technologies:
-      - "C++"
-      - "OpenCV"
-      - "g2o"
-      - "PCL"
-      - "CUDA"
-      - "Lie Algebra"
-      - "ROS2"
-    category: "computer-vision"
-    featured: false
-    year: 2023
-    githubUrl: "https://github.com/victor-retamal/aerial-vslam"
-    demoUrl: "https://aerial-mapping-demo.com"
-
-  - id: "7"
     title: "PX4 State Sharing: Distributed Multi-UAV Formation Control"
     description: "Peer-to-peer state sharing module for PX4 enabling decentralized UAV coordination through direct MAVLink communication."
-    longDescription: "This project implements a distributed formation control system for multiple UAVs using PX4's state-sharing module, eliminating the need for centralized control. The system operates through three key phases: initialization (state broadcasting activation), discovery (neighbor position reception via MAVLink), and coordination (formation velocity calculation using relative positioning). The architecture features a communication stack that broadcasts vehicle telemetry using MAVLink protocol with broadcast/multicast networking, micro-DDS bridge for ROS2 topic translation, and distributed neighbor detection mechanisms. Demonstrated with three PX4-based quadrotors maintaining structured flight patterns through purely peer-to-peer coordination. Currently under review in PX4 pull request #25884, representing active contribution to the upstream autopilot project."
+    longDescription: |
+      This project implements a distributed formation control system for multiple UAVs using PX4's state-sharing module, eliminating the need for centralized control. The system operates through three key phases: initialization (state broadcasting activation), discovery (neighbor position reception via MAVLink), and coordination (formation velocity calculation using relative positioning).
+
+      The architecture features a communication stack that broadcasts vehicle telemetry using MAVLink protocol with broadcast/multicast networking, micro-DDS bridge for ROS2 topic translation, and distributed neighbor detection mechanisms. Demonstrated with three PX4-based quadrotors maintaining structured flight patterns through purely peer-to-peer coordination. Currently under review in PX4 pull request #25884, representing active contribution to the upstream autopilot project.
     technologies:
       - "C++"
       - "Python"
@@ -119,12 +18,16 @@ projects:
       - "micro-DDS"
       - "Gazebo"
     category: "robotics"
+    tags:
+      - "Robotics"
+      - "Swarm"
+      - "Control"
     featured: true
-    year: 2024
+    year: 2025
     githubUrl: "https://github.com/RetamalVictor/PX4-State-Sharing-Demo"
 
 # Configuration for projects section
 section:
   title: "Featured Projects"
-  description: "Selected ML projects demonstrating deep learning, computer vision, and reinforcement learning applied to autonomous systems"
+  description: "Selected projects demonstrating robotics, swarm intelligence, and control systems applied to autonomous UAVs"
   show_featured_only: true  # Set to false to show all projects

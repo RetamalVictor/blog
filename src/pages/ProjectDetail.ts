@@ -166,7 +166,13 @@ export class ProjectDetailPage {
         if (!container) return;
 
         if (this.project.longDescription) {
-            container.innerHTML = `<p>${this.project.longDescription}</p>`;
+            // Split by double newlines to create paragraphs
+            const paragraphs = this.project.longDescription
+                .split('\n\n')
+                .filter(p => p.trim())
+                .map(p => `<p class="text-justify mb-4">${p.trim()}</p>`)
+                .join('');
+            container.innerHTML = paragraphs;
         } else {
             // Generate default content
             const categoryLabel = this.getCategoryLabel().toLowerCase();
