@@ -43,9 +43,15 @@ export class ProjectCard {
 
     private renderImage(): string {
         if (this.project.imageUrl) {
+            // Handle base URL for production deployment
+            const baseUrl = import.meta.env.BASE_URL || '/';
+            const imageSrc = this.project.imageUrl.startsWith('http')
+                ? this.project.imageUrl
+                : `${baseUrl}${this.project.imageUrl.replace(/^\//, '')}`;
+
             return `
                 <img
-                    src="${this.project.imageUrl}"
+                    src="${imageSrc}"
                     alt="${this.project.title}"
                     class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
