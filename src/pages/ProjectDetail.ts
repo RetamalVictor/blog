@@ -1,11 +1,9 @@
-import { ThreeViewer } from '../components/ThreeViewer.js';
 import { loadTemplate, createElement } from '../utils/dom.js';
 import type { Project } from '../types/index.js';
 
 export class ProjectDetailPage {
     private container: HTMLElement;
     private project: Project | null = null;
-    private threeViewer: ThreeViewer | null = null;
 
     constructor(container: HTMLElement) {
         this.container = container;
@@ -22,7 +20,6 @@ export class ProjectDetailPage {
         await this.renderProject();
         this.populateContent();
         this.setupEventListeners();
-        this.initializeThreeViewer();
     }
 
     private async renderProject(): Promise<void> {
@@ -211,24 +208,6 @@ export class ProjectDetailPage {
         });
     }
 
-    private initializeThreeViewer(): void {
-        setTimeout(() => {
-            try {
-                const container = document.getElementById('project-three-scene');
-                if (container) {
-                    this.threeViewer = new ThreeViewer({
-                        containerId: 'project-three-scene',
-                        cameraPosition: [4, 4, 8],
-                        backgroundColor: '#ffffff',
-                        enableControls: true
-                    });
-                }
-            } catch (error) {
-                console.error('Failed to initialize Three.js viewer:', error);
-            }
-        }, 500);
-    }
-
     private renderFallback(): void {
         this.container.innerHTML = `
             <div class="min-h-screen bg-gray-50">
@@ -285,7 +264,6 @@ export class ProjectDetailPage {
     }
 
     public destroy(): void {
-        this.threeViewer?.destroy();
-        this.threeViewer = null;
+        // Cleanup if needed
     }
 }

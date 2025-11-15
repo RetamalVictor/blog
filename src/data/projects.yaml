@@ -5,6 +5,7 @@ projects:
   - id: "1"
     title: "PX4 State Sharing: Distributed Multi-UAV Formation Control"
     description: "Peer-to-peer state sharing module for PX4 enabling decentralized UAV coordination through direct MAVLink communication."
+    imageUrl: "/images/px4_logo.jpeg"
     longDescription: |
       This project implements a distributed formation control system for multiple UAVs using PX4's state-sharing module, eliminating the need for centralized control. The system operates through three key phases: initialization (state broadcasting activation), discovery (neighbor position reception via MAVLink), and coordination (formation velocity calculation using relative positioning).
 
