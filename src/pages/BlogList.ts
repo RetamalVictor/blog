@@ -101,7 +101,14 @@ export class BlogListPage {
 
         container.innerHTML = '';
 
-        this.blogData.posts.forEach(post => {
+        // Sort posts by date in descending order (newest first)
+        const sortedPosts = [...this.blogData.posts].sort((a, b) => {
+            const dateA = new Date(a.date);
+            const dateB = new Date(b.date);
+            return dateB.getTime() - dateA.getTime(); // Descending order
+        });
+
+        sortedPosts.forEach(post => {
             const postElement = this.createBlogPostCard(post);
             container.appendChild(postElement);
         });
