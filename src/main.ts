@@ -18,7 +18,6 @@ class Portfolio {
     private projects: Project[] = [];
     private observer: IntersectionObserver | null = null;
     private heroThreeViewer: ThreeViewer | null = null;
-    private researchThreeViewer: ThreeViewer | null = null;
     private router!: Router;
     private projectDetailPage: ProjectDetailPage | null = null;
     private cvPage: CVPage | null = null;
@@ -215,7 +214,54 @@ class Portfolio {
         const container = document.getElementById('research-areas-container');
         if (container) {
             container.innerHTML = templateManager.createResearchAreasHTML();
+            // Setup card expansion interactivity
+            this.setupResearchAreaInteractivity();
         }
+    }
+
+    private setupResearchAreaInteractivity(): void {
+        const cards = document.querySelectorAll('.research-area-card[role="button"]');
+
+        cards.forEach(card => {
+            const toggleCard = () => {
+                const relatedItems = card.querySelector('.related-items');
+                const chevron = card.querySelector('.chevron-icon');
+                const isExpanded = card.getAttribute('aria-expanded') === 'true';
+
+                if (relatedItems && chevron) {
+                    if (isExpanded) {
+                        // Collapse
+                        relatedItems.classList.add('hidden');
+                        chevron.classList.remove('rotate-180');
+                        card.setAttribute('aria-expanded', 'false');
+                    } else {
+                        // Expand
+                        relatedItems.classList.remove('hidden');
+                        chevron.classList.add('rotate-180');
+                        card.setAttribute('aria-expanded', 'true');
+                    }
+                }
+            };
+
+            // Click handler
+            card.addEventListener('click', (e: Event) => {
+                // Prevent expansion if clicking on a link
+                if ((e.target as HTMLElement).tagName === 'A' ||
+                    (e.target as HTMLElement).closest('a')) {
+                    return;
+                }
+                toggleCard();
+            });
+
+            // Keyboard accessibility
+            card.addEventListener('keydown', (e: Event) => {
+                const keyEvent = e as KeyboardEvent;
+                if (keyEvent.key === 'Enter' || keyEvent.key === ' ') {
+                    keyEvent.preventDefault();
+                    toggleCard();
+                }
+            });
+        });
     }
 
     private populateFooterContent(): void {
@@ -267,20 +313,6 @@ class Portfolio {
                     enableControls: true
                 });
             }
-
-            // Initialize research Three.js viewer with a delay for better UX
-            setTimeout(() => {
-                const researchContainer = document.getElementById('research-three-scene');
-                if (researchContainer) {
-                    this.researchThreeViewer = new ThreeViewer({
-                        containerId: 'research-three-scene',
-                        cameraPosition: [3, 3, 6],
-                        backgroundColor: '#f8fafc',
-                        enableControls: true
-                    });
-                }
-            }, 1000);
-
         } catch (error) {
             console.error('Failed to initialize Three.js viewers:', error);
         }
@@ -342,7 +374,6 @@ class Portfolio {
     public destroy(): void {
         this.observer?.disconnect();
         this.heroThreeViewer?.destroy();
-        this.researchThreeViewer?.destroy();
     }
 }
 

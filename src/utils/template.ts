@@ -59,19 +59,103 @@ export class TemplateManager {
     public createResearchAreasHTML(): string {
         const researchData = config.getResearchAreas();
 
-        return researchData.areas.map(area => `
-            <div class="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-sm">
-                <div class="w-12 h-12 ${area.color_scheme.background} rounded-lg flex items-center justify-center flex-shrink-0">
-                    <svg class="w-6 h-6 ${area.color_scheme.icon}" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="${area.icon_path}"></path>
-                    </svg>
+        return researchData.areas.map(area => {
+            // Get related items for this area
+            const relatedItems = config.getRelatedItems(area.id);
+            const hasRelatedItems = relatedItems.projects.length > 0 ||
+                                   relatedItems.blogs.length > 0 ||
+                                   relatedItems.publications.length > 0;
+
+            // Create related items HTML
+            const relatedItemsHTML = hasRelatedItems ? `
+                <div class="related-items mt-4 pt-4 border-t border-gray-100 hidden" data-area-id="${area.id}">
+                    ${relatedItems.projects.length > 0 ? `
+                        <div class="mb-3">
+                            <h5 class="text-sm font-semibold text-gray-700 mb-2">Projects</h5>
+                            <ul class="space-y-2">
+                                ${relatedItems.projects.map(project => `
+                                    <li>
+                                        <a href="#/project/${project.id}" class="text-sm text-blue-600 hover:text-blue-800 hover:underline flex items-start">
+                                            <svg class="w-4 h-4 mr-1 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                            <span>${project.title}</span>
+                                        </a>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+                    ${relatedItems.blogs.length > 0 ? `
+                        <div class="mb-3">
+                            <h5 class="text-sm font-semibold text-gray-700 mb-2">Blog Posts</h5>
+                            <ul class="space-y-2">
+                                ${relatedItems.blogs.map(blog => `
+                                    <li>
+                                        <a href="/blog/blog/${blog.slug}" class="text-sm text-green-600 hover:text-green-800 hover:underline flex items-start">
+                                            <svg class="w-4 h-4 mr-1 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                            <span>${blog.title}</span>
+                                        </a>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+                    ${relatedItems.publications.length > 0 ? `
+                        <div class="mb-3">
+                            <h5 class="text-sm font-semibold text-gray-700 mb-2">Publications</h5>
+                            <ul class="space-y-2">
+                                ${relatedItems.publications.map(pub => {
+                                    const authors = Array.isArray(pub.authors) ? pub.authors.join(', ') : pub.authors;
+                                    const authorsWithBold = authors
+                                        .replace(/Víctor Retamal Guiberteau/g, '<strong>Víctor Retamal Guiberteau</strong>')
+                                        .replace(/Victor Retamal/g, '<strong>Victor Retamal</strong>');
+                                    return `
+                                    <li>
+                                        <a href="/blog/cv" class="text-sm text-purple-600 hover:text-purple-800 hover:underline flex items-start">
+                                            <svg class="w-4 h-4 mr-1 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                            <span>${pub.title}</span>
+                                        </a>
+                                        <p class="text-xs text-gray-500 ml-5">${authorsWithBold}</p>
+                                        <p class="text-xs text-gray-500 ml-5">${pub.journal}, ${pub.date}</p>
+                                    </li>
+                                `}).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
                 </div>
-                <div>
-                    <h4 class="text-lg font-semibold">${area.title}</h4>
-                    <p class="text-gray-600 text-sm">${area.description}</p>
+            ` : '';
+
+            return `
+                <div class="research-area-card bg-white rounded-lg shadow-sm border border-gray-100 transition-all ${hasRelatedItems ? 'cursor-pointer hover:shadow-md' : ''}"
+                     data-area-id="${area.id}"
+                     ${hasRelatedItems ? 'role="button" tabindex="0" aria-expanded="false"' : ''}>
+                    <div class="flex items-center space-x-4 p-4">
+                        <div class="w-12 h-12 ${area.color_scheme.background} rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 ${area.color_scheme.icon}" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="${area.icon_path}"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-lg font-semibold">${area.title}</h4>
+                            <p class="text-gray-600 text-sm">${area.description}</p>
+                        </div>
+                        ${hasRelatedItems ? `
+                            <div class="chevron-icon flex-shrink-0 transition-transform duration-200">
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        ` : ''}
+                    </div>
+                    ${relatedItemsHTML}
                 </div>
-            </div>
-        `).join('');
+            `;
+        }).join('');
     }
 
     /**

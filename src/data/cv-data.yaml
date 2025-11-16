@@ -1,116 +1,142 @@
 cv:
   name: Victor Retamal
-  label: Machine Learning Engineer
-  location: San Francisco, CA
-  email: victor.retamal@example.com
-  phone: "+1-555-123-4567"
-  website: https://victor-retamal.com
+  label: Machine Learning / Robotics Engineer
+  location: ""
+  email: retamal1.victor@gmail.com
+  phone: ""
+  website: https://retamalvictor.github.io/blog/
   social_networks:
     - network: LinkedIn
       username: victor-retamal
     - network: GitHub
-      username: victor-retamal
-    - network: ORCID
-      username: 0000-0002-1234-5678
+      username: RetamalVictor
 
 sections:
   education:
-    - institution: University of California, Berkeley
-      area: Robotics & Control Systems
+    - institution: Vrije Universiteit Amsterdam & University of Amsterdam
+      area: Artificial Intelligence
       degree: Master of Science
-      start_date: 2020-09
-      end_date: 2022-05
+      start_date: 2021-09
+      end_date: 2023-07
       highlights:
-        - "Focus: Multi-agent systems, visual servoing, and autonomous navigation"
-        - "Thesis: Distributed control algorithms for heterogeneous UAV swarms"
-        - "GPA: 3.9/4.0"
+        - "Thesis: Multi-Agent Reinforcement Learning for continuous control under restricted perception"
+        - "Grade: 9/10"
 
-    - institution: Stanford University
-      area: Computer Science with Robotics Concentration
+    - institution: Universidad de Extremadura
+      area: Medicine & Surgery
       degree: Bachelor of Science
-      start_date: 2016-09
-      end_date: 2020-05
+      start_date: 2014-09
+      end_date: 2020-06
       highlights:
-        - "Specialization in Robotics, Computer Vision, and Control Theory"
-        - "Capstone: Vision-based control for autonomous drone landing"
-        - "Magna Cum Laude"
+        - "Thesis: 3-D patient-specific models for orthopaedic-surgery planning"
+        - "Grade: 10/10"
 
   experience:
-    - company: Autonomous Systems Lab
-      position: Machine Learning Engineer
-      start_date: 2022-06
+    - company: Technology Innovation Institute (TII)
+      position: Machine Learning / Robotics Engineer
+      location: Abu Dhabi, UAE
+      start_date: 2023-09
       end_date: present
       highlights:
-        - "Developed deep learning models for visual SLAM and perception in multi-UAV systems"
-        - "Designed and implemented multi-agent reinforcement learning algorithms for swarm coordination"
-        - "Created transformer-based architectures for visual servoing and precision control tasks"
-        - "Deployed scalable ML solutions on 20+ physical drones, achieving real-time performance"
+        - "Designed and implemented distributed multi-agent codebase for autonomous applications; scaled multi-host simulations (>20 concurrent) reducing experiment cycles by ~80%"
+        - "Built benchmarking framework for multimodal ML pipelines improving latency and output consistency"
+        - "Validated Fluid Dynamics ML model supporting Abu Dhabi autonomous air-taxi regulatory study"
+        - "Curated >20 hours multimodal UAV datasets for ML perception"
+        - "Productionized an agentic LLM tool for autonomous PR generation adopted across research units"
+        - "Mentored junior engineer in multi-agent simulation systems"
 
-    - company: NASA Ames Research Center
-      position: ML Engineering Intern
-      start_date: 2021-06
-      end_date: 2021-08
+    - company: Bio-Inspired Robotics Lab, VU Amsterdam
+      position: Graduate Research Assistant (Multi-Agent Systems)
+      location: Amsterdam, Netherlands
+      start_date: 2022-08
+      end_date: 2023-09
       highlights:
-        - "Developed deep reinforcement learning algorithms for multi-agent UAV exploration"
-        - "Implemented CNN-based visual SLAM achieving < 0.5% drift using self-supervised learning"
-        - "Built ML training pipelines across Gazebo, JSBSim, and Isaac Lab for sim-to-real transfer"
+        - "Co-authored novel MARL distributed navigation methods published at IEEE RAL/ICRA"
+        - "Built lab research software toolbox adopted by 5+ MSc & PhD projects"
+        - "Founded robotics mentorship program supporting 8+ students"
+
+    - company: TU Eindhoven
+      position: Graduate Research Intern (MARL)
+      location: Eindhoven, Netherlands
+      start_date: 2022-02
+      end_date: 2022-08
+      highlights:
+        - "Enhanced A3C RL with attention models improving efficiency w/ MCTS"
+        - "Developed HPC job-management toolkit for Snellius cluster with monitoring dashboards"
+
+    - company: Spaarne Labs
+      position: Machine Learning Engineer
+      location: Haarlem, Netherlands
+      start_date: 2021-09
+      end_date: 2022-02
+      highlights:
+        - "Curated clinical datasets and deployed evaluation service with automated reporting"
 
   publications:
-    - title: "Distributed Visual SLAM for Multi-UAV Systems in GPS-Denied Environments"
-      authors: ["Victor Retamal", "Dr. Sarah Chen", "Dr. Michael Rodriguez"]
-      journal: "IEEE Transactions on Robotics"
+    - title: "Automatic Segmentation of Cardiac Structures from 2-D Echocardiographic Images using Transformers"
+      authors: ["Anne Chel", "Mats Gonggrijp", "Victor Kyriacou", "Victor Retamal", "Laura Latorre Moreno", "Navchetan Awasthi"]
+      journal: "IEEE SAUS"
       date: 2024
-      doi: "10.1109/TRO.2024.example"
+      doi: "10.1109/SAUS61785.2024.10563657"
 
-    - title: "Adaptive Visual Servoing for Precision Landing on Moving Platforms"
-      authors: ["Victor Retamal", "Dr. Jennifer Liu"]
-      journal: "International Journal of Robotics Research"
+    - title: "From Shadows to Light: A Swarm-Robotics Approach with On-board Control for Seeking Dynamic Sources in Constrained Environments"
+      authors: ["Tugay Alperen Karagüzel", "Victor Retamal", "Nicolas Cambier", "Eliseo Ferrante"]
+      journal: "IEEE RAL"
       date: 2023
-      doi: "10.1177/IJRR.2023.example"
+      doi: "10.1109/LRA.2023.3331897"
+
+    - title: "On-board Controller Design for Nano UAV Swarm in Operator-Guided Collective Behaviours"
+      authors: ["Tugay Alperen Karagüzel", "Victor Retamal", "Eliseo Ferrante"]
+      journal: "IEEE ICRA"
+      date: 2023
+      doi: "10.1109/ICRA48891.2023.10160630"
 
   projects:
-    - name: "Multi-UAV Cooperative Navigation System"
-      date: 2023-2024
+    - name: "TinyLM-RMSNorm"
+      date: "June 2025 – Aug 2025"
       highlights:
-        - "Implemented distributed SLAM with map merging for 10+ simultaneous UAVs"
-        - "Developed consensus-based state estimation using EKF/UKF filters"
-        - "Deployed on PX4-based quadrotors with ROS2 integration"
-        - "Technologies: C++, Python, PX4, ROS2, Gazebo, SLAM"
+        - "Lightweight GPT-style model w/ RMSNorm, custom CUDA extension and inference-time caching"
+        - "Repository: https://github.com/RetamalVictor/TinyLM-RMSnorm"
 
-    - name: "Vision-Based Control for Autonomous Landing"
-      date: 2022-2023
+    - name: "Multi-Robot Distributed Path-Finding w/ GNNs"
+      date: "Jan 2023 – Mar 2023"
       highlights:
-        - "Designed IBVS/PBVS controllers for precision landing on moving platforms"
-        - "Achieved centimeter-level accuracy at speeds up to 15 m/s"
-        - "Integrated with PX4 flight stack and tested in Gazebo/JSBSim"
-        - "Technologies: Python, OpenCV, PX4, Visual Servoing, JSBSim"
+        - "Decentralized multi-robot path planning on grid worlds using GNNs and CBS dataset generation"
+        - "Repository: https://github.com/RetamalVictor/MAPF-GNN"
 
   skills:
+    - label: "Machine Learning"
+      details: "Transformers (LLMs, multimodal), GNNs, VAE/AAE, Contrastive & self-supervised learning, Multi-Agent RL, Embodied AI, Retrieval-Augmented Generation"
+    - label: "Data Engineering"
+      details: "Video pipelines, data versioning, simulation data generation, Hydra, MLflow, W&B, ffmpeg, OpenCV"
+    - label: "Distributed Training"
+      details: "Multi-node GPU, SLURM, Jetson Orin clusters, CUDA, PyTorch, TensorBoard, PyTorch Profiler"
+    - label: "MLOps & Software"
+      details: "Docker, CI/CD, Git, Ansible, tmux"
     - label: "Programming Languages"
-      details: "Python, C++, MATLAB, TypeScript/JavaScript, Julia"
-    - label: "Robotics Simulation"
-      details: "Gazebo, Isaac Lab, MuJoCo, PyBullet, JSBSim, CARLA, AirSim"
-    - label: "Robotics Frameworks"
-      details: "ROS/ROS2, PX4 (flight stack), MAVROS, MAVSDK, ArduPilot"
-    - label: "Control & Navigation"
-      details: "State-space control, MPC, Adaptive control, Lie algebra, Kalman filters (EKF/UKF), SLAM, Visual servoing (IBVS/PBVS)"
-    - label: "Computer Vision & ML"
-      details: "OpenCV, PyTorch, TensorFlow, Visual SLAM, Multi-agent RL, YOLO, Deep reinforcement learning"
-    - label: "Tools & Platforms"
-      details: "Git, Docker, CUDA, Linux, Real-time systems, Hardware-in-the-loop testing"
+      details: "Python, C/C++, Bash, Julia, Matlab, Java, SQL, R"
+    - label: "Languages"
+      details: "Spanish (native), English (C2), Portuguese (B2)"
 
   awards:
-    - title: "Outstanding Graduate Student Award"
-      date: 2023
-      awarder: "Department of Robotics & Control Systems"
+    - title: "1st Place – VU Data-Mining Techniques Cup"
+      date: 2022
+      awarder: "Vrije Universiteit Amsterdam"
 
-    - title: "Best Paper Award"
-      date: 2023
-      awarder: "IEEE International Conference on Robotics and Automation (ICRA)"
+    - title: "Finalist – ACE AI Lab Startup Challenge"
+      date: 2021
+      awarder: "ACE AI Lab"
 
-    - title: "Graduate Research Fellowship"
-      date: 2020-2024
-      awarder: "National Science Foundation - Robotics Program"
+  workshops:
+    - title: "Learning Methods with Range-Only Interactions in Active Systems"
+      date: "Apr 2023"
+      location: "Max Planck Institute"
+      authors: ["Victor Retamal", "Eliseo Ferrante"]
+
+  certifications:
+    - title: "AIAA Applied System Engineering"
+      date: 2025
+      awarder: "AIAA"
 
 design:
   theme: classic

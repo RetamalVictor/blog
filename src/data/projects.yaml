@@ -27,6 +27,32 @@ projects:
     year: 2025
     githubUrl: "https://github.com/RetamalVictor/PX4-State-Sharing-Demo"
 
+  - id: "2"
+    title: "MAPF-GNN: Multi-Robot Pathfinding with Graph Neural Networks"
+    description: "Decentralized multi-agent path planning using Graph Convolutional Networks for independent navigation with local observations."
+    imageUrl: "https://raw.githubusercontent.com/RetamalVictor/MAPF-GNN/main/assets/demo.gif"
+    longDescription: |
+      Graph Neural Network-based implementation for decentralized multi-robot path planning on grid environments. Agents operate independently without centralized coordination, using GNNs to make navigation decisions based solely on local observations of their surroundings.
+
+      The system features Graph Convolutional Networks with spectral filters for message passing between agents, Conflict-Based Search (CBS) algorithms for generating optimal training data, and a custom Gymnasium-compatible multi-agent grid environment. Includes comprehensive benchmarking suite for performance profiling, real-time visualization tools, and 44 unit tests covering algorithm correctness and scalability.
+
+      Implements research from "Graph Neural Networks for Decentralized Multi-Robot Path Planning" (Li et al.), demonstrating how neural policies can enable scalable decentralized coordination in obstacle-filled environments. Academic project developed for ML with Graphs course at VU Amsterdam.
+    technologies:
+      - "Python"
+      - "PyTorch"
+      - "Graph Neural Networks"
+      - "Gymnasium"
+      - "A* Algorithm"
+      - "Conflict-Based Search"
+    category: "machine-learning"
+    tags:
+      - "Graph Neural Networks"
+      - "Multi-Agent Systems"
+      - "Path Planning"
+    featured: true
+    year: 2023
+    githubUrl: "https://github.com/RetamalVictor/MAPF-GNN"
+
 # Configuration for projects section
 section:
   title: "Featured Projects"

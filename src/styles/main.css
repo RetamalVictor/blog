@@ -318,3 +318,37 @@ body {
 .max-w-none {
   max-width: none;
 }
+
+/* Research Area Cards - Expandable */
+.research-area-card {
+  transition: all 0.2s ease-in-out;
+}
+
+.research-area-card .related-items {
+  transition: all 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.research-area-card .related-items:not(.hidden) {
+  max-height: 1000px;
+  overflow: visible;
+}
+
+.research-area-card .chevron-icon {
+  transition: transform 0.2s ease-in-out;
+}
+
+.research-area-card:hover {
+  transform: translateY(-2px);
+}
+
+.research-area-card[role="button"]:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Smooth rotation for chevron */
+.rotate-180 {
+  transform: rotate(180deg);
+}

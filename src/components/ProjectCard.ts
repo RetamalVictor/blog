@@ -138,14 +138,8 @@ export class ProjectCard {
     }
 
     private getCategoryColor(): string {
-        const colors = {
-            'robotics': 'bg-blue-100 text-blue-800',
-            'computer-vision': 'bg-purple-100 text-purple-800',
-            'machine-learning': 'bg-green-100 text-green-800',
-            'multi-agent': 'bg-orange-100 text-orange-800',
-            'research': 'bg-indigo-100 text-indigo-800'
-        };
-        return colors[this.project.category] || 'bg-gray-100 text-gray-800';
+        // All categories use green color
+        return 'bg-green-100 text-green-800';
     }
 
     private getCategoryLabel(): string {
