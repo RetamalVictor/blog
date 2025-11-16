@@ -30,7 +30,7 @@ projects:
   - id: "2"
     title: "MAPF-GNN: Multi-Robot Pathfinding with Graph Neural Networks"
     description: "Decentralized multi-agent path planning using Graph Convolutional Networks for independent navigation with local observations."
-    imageUrl: "https://raw.githubusercontent.com/RetamalVictor/MAPF-GNN/main/assets/demo.gif"
+    imageUrl: "https://raw.githubusercontent.com/RetamalVictor/MAPF-GNN/master/example.gif"
     longDescription: |
       Graph Neural Network-based implementation for decentralized multi-robot path planning on grid environments. Agents operate independently without centralized coordination, using GNNs to make navigation decisions based solely on local observations of their surroundings.
 
