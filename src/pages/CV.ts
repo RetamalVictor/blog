@@ -208,11 +208,11 @@ export class CVPage {
                 <div class="flex justify-between items-start mb-2">
                     <div>
                         <h4 class="text-lg font-semibold text-gray-900">${exp.position}</h4>
-                        <p class="text-gray-700">${exp.company}</p>
+                        <p class="text-gray-700">${exp.company}${exp.location ? `, ${exp.location}` : ''}</p>
                     </div>
                     <span class="text-gray-500 text-sm">${this.formatDateRange(exp.start_date, exp.end_date)}</span>
                 </div>
-                ${exp.highlights ? `<ul class="list-disc list-inside text-gray-600 space-y-1 ml-4">${exp.highlights.map((h: string) => `<li>${h}</li>`).join('')}</ul>` : ''}
+                ${exp.description ? `<p class="text-gray-600 text-sm leading-relaxed">${exp.description}</p>` : ''}
             `;
             section.appendChild(item);
         });

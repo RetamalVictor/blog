@@ -10,6 +10,9 @@ export class ProjectDetailPage {
     }
 
     public async render(projectId: string, projects: Project[]): Promise<void> {
+        // Scroll to top when navigating to project page
+        window.scrollTo(0, 0);
+
         this.project = projects.find(p => p.id === projectId) || null;
 
         if (!this.project) {

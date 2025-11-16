@@ -75,7 +75,7 @@ export class TemplateManager {
                             <ul class="space-y-2">
                                 ${relatedItems.projects.map(project => `
                                     <li>
-                                        <a href="#/project/${project.id}" class="text-sm text-blue-600 hover:text-blue-800 hover:underline flex items-start">
+                                        <a href="/blog/project/${project.id}" class="text-sm text-blue-600 hover:text-blue-800 hover:underline flex items-start">
                                             <svg class="w-4 h-4 mr-1 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                             </svg>
@@ -112,11 +112,12 @@ export class TemplateManager {
                                     const authorsWithBold = authors
                                         .replace(/Víctor Retamal Guiberteau/g, '<strong>Víctor Retamal Guiberteau</strong>')
                                         .replace(/Victor Retamal/g, '<strong>Victor Retamal</strong>');
+                                    const doiUrl = pub.doi ? `https://doi.org/${pub.doi}` : '#';
                                     return `
                                     <li>
-                                        <a href="/blog/cv" class="text-sm text-purple-600 hover:text-purple-800 hover:underline flex items-start">
+                                        <a href="${doiUrl}" target="_blank" rel="noopener" class="text-sm text-purple-600 hover:text-purple-800 hover:underline flex items-start">
                                             <svg class="w-4 h-4 mr-1 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                             </svg>
                                             <span>${pub.title}</span>
                                         </a>

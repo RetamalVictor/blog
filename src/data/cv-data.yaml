@@ -37,40 +37,28 @@ sections:
       location: Abu Dhabi, UAE
       start_date: 2023-09
       end_date: present
-      highlights:
-        - "Designed and implemented distributed multi-agent codebase for autonomous applications; scaled multi-host simulations (>20 concurrent) reducing experiment cycles by ~80%"
-        - "Built benchmarking framework for multimodal ML pipelines improving latency and output consistency"
-        - "Validated Fluid Dynamics ML model supporting Abu Dhabi autonomous air-taxi regulatory study"
-        - "Curated >20 hours multimodal UAV datasets for ML perception"
-        - "Productionized an agentic LLM tool for autonomous PR generation adopted across research units"
-        - "Mentored junior engineer in multi-agent simulation systems"
+      description: "Developed and deployed distributed multi-agent systems for autonomous applications, with focus on machine learning pipelines, simulation frameworks, and multimodal perception for UAV robotics research."
 
     - company: Bio-Inspired Robotics Lab, VU Amsterdam
       position: Graduate Research Assistant (Multi-Agent Systems)
       location: Amsterdam, Netherlands
       start_date: 2022-08
       end_date: 2023-09
-      highlights:
-        - "Co-authored novel MARL distributed navigation methods published at IEEE RAL/ICRA"
-        - "Built lab research software toolbox adopted by 5+ MSc & PhD projects"
-        - "Founded robotics mentorship program supporting 8+ students"
+      description: "Conducted research in multi-agent reinforcement learning for distributed navigation, contributing to published work and developing software tools for robotics research."
 
     - company: TU Eindhoven
       position: Graduate Research Intern (MARL)
       location: Eindhoven, Netherlands
       start_date: 2022-02
       end_date: 2022-08
-      highlights:
-        - "Enhanced A3C RL with attention models improving efficiency w/ MCTS"
-        - "Developed HPC job-management toolkit for Snellius cluster with monitoring dashboards"
+      description: "Enhanced reinforcement learning algorithms with attention mechanisms and developed high-performance computing infrastructure for distributed training."
 
     - company: Spaarne Labs
       position: Machine Learning Engineer
       location: Haarlem, Netherlands
       start_date: 2021-09
       end_date: 2022-02
-      highlights:
-        - "Curated clinical datasets and deployed evaluation service with automated reporting"
+      description: "Developed machine learning solutions for clinical applications, including dataset curation and automated evaluation systems."
 
   publications:
     - title: "Automatic Segmentation of Cardiac Structures from 2-D Echocardiographic Images using Transformers"

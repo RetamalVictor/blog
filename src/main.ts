@@ -191,14 +191,12 @@ class Portfolio {
             const aboutTemplate = await templateManager.loadConfigurableTemplate('/src/templates/about-section.html');
             const researchTemplate = await templateManager.loadConfigurableTemplate('/src/templates/research-section.html');
             const projectsTemplate = await templateManager.loadConfigurableTemplate('/src/templates/projects-section.html');
-            const resumeTemplate = await templateManager.loadConfigurableTemplate('/src/templates/resume-section.html');
             const footerTemplate = await templateManager.loadConfigurableTemplate('/src/templates/footer.html');
 
             // Populate containers
             document.getElementById('about-section-container')!.innerHTML = aboutTemplate;
             document.getElementById('research-section-container')!.innerHTML = researchTemplate;
             document.getElementById('projects-section-container')!.innerHTML = projectsTemplate;
-            document.getElementById('resume-section-container')!.innerHTML = resumeTemplate;
             document.getElementById('footer-container')!.innerHTML = footerTemplate;
 
             // Populate dynamic content

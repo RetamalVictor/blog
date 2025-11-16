@@ -11,27 +11,25 @@ export class ProjectCard {
 
     private createElement(): HTMLElement {
         const card = document.createElement('div');
-        card.className = 'card group cursor-pointer';
+        card.className = 'bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col';
 
         card.innerHTML = `
             <div class="relative overflow-hidden">
                 ${this.renderImage()}
                 ${this.renderOverlay()}
             </div>
-            <div class="p-6">
-                <div class="flex items-center justify-between mb-3">
-                    <h4 class="text-xl font-semibold text-gray-900">${this.project.title}</h4>
-                    <span class="text-sm text-gray-500">${this.project.year}</span>
-                </div>
+            <div class="p-6 flex flex-col flex-1">
+                <h4 class="text-xl font-semibold text-gray-900 mb-3">${this.project.title}</h4>
                 <p class="text-gray-600 mb-4 line-clamp-3">${this.project.description}</p>
                 <div class="flex flex-wrap gap-2 mb-4">
                     ${this.renderTechnologies()}
                 </div>
-                <div class="flex items-center justify-between">
-                    <div class="flex flex-wrap gap-2">
-                        ${this.renderTags()}
-                    </div>
-                    <div class="flex space-x-2">
+                <div class="flex flex-wrap gap-2 mb-4">
+                    ${this.renderTags()}
+                </div>
+                <div class="mt-auto pt-4 flex items-center justify-end gap-3 text-sm text-gray-500 border-t border-gray-100">
+                    <span class="font-medium">${this.project.year}</span>
+                    <div class="flex gap-2">
                         ${this.renderLinks()}
                     </div>
                 </div>
