@@ -2,8 +2,8 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
-  // Always use /blog/ base for GitHub Pages deployment
-  base: '/blog/',
+  // Use root base for custom domain deployment
+  base: '/',
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),

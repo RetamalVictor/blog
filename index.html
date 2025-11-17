@@ -27,7 +27,7 @@
                 if (match) {
                     var path = decodeURIComponent(match[1]);
                     // Replace the URL without the query parameter
-                    history.replaceState(null, null, '/blog' + path);
+                    history.replaceState(null, null, path);
                 }
             }
         })();

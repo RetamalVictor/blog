@@ -4,17 +4,12 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-        // GitHub Pages SPA redirect for /blog/ base path
+        // GitHub Pages SPA redirect for custom domain
         (function() {
             var path = window.location.pathname;
 
-            // Remove the /blog prefix if it exists
-            if (path.startsWith('/blog/')) {
-                path = path.substring(5); // Remove '/blog'
-            }
-
             // Redirect to index.html with the path as a query parameter
-            var redirect = '/blog/?p=' + encodeURIComponent(path) + window.location.search.slice(1);
+            var redirect = '/?p=' + encodeURIComponent(path) + window.location.search.slice(1);
             window.location.replace(redirect);
         })();
     </script>
